@@ -56,7 +56,7 @@ h1 {
     font-family: "helveticaneue","helvetica neue","helveticaneueroman","helveticaneue-roman","helvetica neue roman","helvetica","arial",'texgyreherosregular',"tahoma","geneva",sans-serif;
     font-size: 4em;
     font-weight: 600;
-    background: url('/static/images/logo.png') no-repeat;
+    background: url('/images/logo.png') no-repeat;
     height: 46px;
     width: 250px;
 }

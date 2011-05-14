@@ -18,11 +18,7 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="{% staticfile '/css/styles.css' %}" />
 	
 	<script src="{% staticfile '/js/jquery-1.6.min.js' %}" type="application/javascript"></script>
-	<script src="/static/js/jquery.tools.min.js"></script>
-	<!--[if lte IE 6]>
-	<link rel="stylesheet" media="screen" type="text/css" href="/media/css/ie6.css" />
-	<![endif]-->
-
+	<script src="{% staticfile '/js/jquery.tools.min.js' %}"></script>
 
 
     {% block extracss %}{% endblock %}
