@@ -15,10 +15,10 @@
 	<meta name="robots" content="ALL" />
 	<title>westiseast.co.uk - {% block title %}{% endblock %}</title>
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="{% staticfile '/css/styles.css' %}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="{% slimfile '/css/styles.css' %}" />
 	
-	<script src="{% staticfile '/js/jquery-1.6.min.js' %}" type="application/javascript"></script>
-	<script src="{% staticfile '/js/jquery.tools.min.js' %}"></script>
+	<script src="{% slimfile '/js/jquery-1.6.min.js' %}" type="application/javascript"></script>
+	<script src="{% slimfile '/js/jquery.tools.min.js' %}"></script>
 
 
     {% block extracss %}{% endblock %}
@@ -28,7 +28,7 @@
 
 <body>
 
-
+{% slimcontent %}
 
 
 	{% include "snippets/header.html" %}
@@ -42,6 +42,8 @@
 	{% block footer %}{% endblock %}
 
 </div>
+
+{% endslimcontent %}
 
 {% block extrajs %}{% endblock %}
 
