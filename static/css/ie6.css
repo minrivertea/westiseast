@@ -1,0 +1,51 @@
+
+
+div#main {
+  width: 400px;
+  float: left;	
+  margin-left: 20px;
+}
+
+div.entry {
+  float: left;
+  width: 400px;
+  margin: 0;
+  padding: 0;	
+}
+
+div#header-elements {
+  margin-left: 20px;	
+}
+
+div#container-wide div#header-elements {
+  margin-left: 0px;	
+}
+
+div#container-wide div.gallery-listing {
+  margin-left: 0px;	
+  width: 300px;
+  margin-top: 20px;
+}
+
+div#container-wide div#main {
+  width: 900px;	
+  margin-left: 20px;
+}
+
+div.dummy {
+  margin-right: 0px;	
+}
+
+div#right ul img {
+  margin-left: -10px;	
+  float: left;
+}
+
+div#right ul li {
+  margin-bottom: 20px;	
+}
+
+div#right li {
+  margin-bottom: 0px;
+  padding-bottom: 0px;	
+}

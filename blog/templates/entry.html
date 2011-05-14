@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block meta-description %}{{ entry.summary }}{% endblock %}
+{% block title %}{{ entry.title }}{% endblock %}
+{% block extrajs %}
+{% endblock %}
+
+{% block right %}
+  <h4>Other Blog Posts</h4>
+  <ul class="blog">
+  {% for e in others %}
+    <li class="blog">
+     <a href="{% url blog_entry e.slug %}">{{ e.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+  
+{% include "snippets/right.html" %} 
+
+{% endblock %}
+
+
+{% block banner %}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div id="entry-content">
+
+<h2>{{ entry.title }}</h2>
+
+
+<p>{{ entry.content|safe }}</p>
+
+<p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
+
+<br />
+
+
+</div>
+
+
+<h3>Other entries</h3>
+{% if entry.get_next_by_date_added %}
+<p>Next: <a href="{% url blog_entry entry.get_next_by_date_added %}">{{ entry.get_next_by_date_added.title }}</a>
+<br />
+{% endif %}
+{% if entry.get_previous_by_date_added %}
+Previous: <a href="{% url blog_entry entry.get_previous_by_date_added %}">{{ entry.get_previous_by_date_added.title }}</a></p>
+{% endif %}
+
+{% endblock %}
+
+

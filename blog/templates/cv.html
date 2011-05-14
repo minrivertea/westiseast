@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block title %}Curriculum Vitae{% endblock %}
+
+
+{% block extracss %}
+<style type="text/css">
+div#entry-content {
+  margin-top: 0px;	
+}
+
+div#entry-content p {
+  margin-left: 30px;	
+}
+
+div#entry-content p.introduction {
+    font-size: 1.6em;
+    text-align: center;
+    margin-top: 0;
+}
+
+div#entry-content ul.block {
+  list-style-image: none;
+  padding-left: 0;
+  margin-left: 30px;	
+}
+
+div#entry-content ul.block p {
+  margin-left: 0px;	
+}
+
+div#entry-content ul.block li {
+  list-style-type: none;
+  margin-bottom: 20px;
+  border-bottom: 2px dotted #e1e1e1;
+  float: left;
+}
+
+div#entry-content ul.block li img {
+  float: left;
+  margin: 10px 10px 20px 0px;	
+}
+
+div#entry-content ul.block li.last {
+  border-bottom: none;
+}
+
+h4 { margin-left: 30px; font-weight: bold; letter-spacing: 0px; font-size: 1.4em; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;}
+
+span.hardtitle {
+  font-family: helvetica;
+  font-weight: bold;
+}
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+<br/>
+<div id="entry-content">
+
+<p class="introduction"><em>I am a web project manager with 7 years hands on experience of designing, coding and managing websites.</em></p>
+
+<h4>Work history</h4>
+
+<ul class="block">
+<li>
+	<p><span class="hardtitle">2009-11 – Technical Delivery Manager, Fry-IT (<a href="http://www.fry-it.com">www.fry-it.com</a>)</span><br/>
+	In this web development agency, I worked as a bridge between clients and developers, turning our client's concepts and requirements into a reality. This normally involved working with a client upfront to develop design and technical specifications for their website project, and then coordinating and managing delivery of a site from start to finish. I completed around 25 projects with varied clients, ranging from international charities (<a href="http://plan-international.org">plan-international.org</a> – main global website, <a href="http://www.actalliance.org">www.actalliance.org</a>, main global website) to businesses and public sector organisations (<a href="http://www.cfwi.org.uk">www.cfwi.org.uk</a> – new government workforce planning portal). A typical budget for our web projects would be between £30 – 50k.</p>
+</li>
+<li>
+	<p><span class="hardtitle">2007-9 – Studying Mandarin in China</span><br/>
+	In 2007 I moved to China to begin studying Chinese language. I studied at the Fujian Agriculture and Forestry University in Fuzhou for 2 years, and taught English part-time. </p>
+</li>
+<li>
+	<p><span class="hardtitle">2004-2007 – Web Manager, Qualifications and Curriculum Authority</span><br/>
+	I worked for QCA initially as a marketing manager, eventually shifting focus towards online communications. I managed a set of large national websites communicating news and changes to teachers in schools and supporting a £140m curriculum development programme. I was responsible for coordinating all aspects of our website, from day-to-day content updates with a team of editors, to managing fixed development programmes (eg. developing our new website, developing online good practice communities). Our sites had an average of 2million pageviews a month, and an operating budget of £500,000 annually.</p>
+</li>
+
+<li class="last">
+ 	<p><span class="hardtitle">2001-2004 – Communications Officer, Families for Children</span><br/>
+ 	My first employment after university, in this leading child fostering agency, I was responsible for a range of communications channels both internal and external. To promote the business, I produced and managed our website, as well as brochures and advertising campaigns in print and on local radio. I also ran a successful series of internal communications campaigns to maintain the great relationships the business had with our registered foster families, even as the agency doubled in size during my time at FfC.</p>
+</li>
+
+</ul>
+
+<h4>Other experience</h4>
+<p>In my spare time, I've developed my design and web coding skills through a number of side-projects in collaboration with friends and colleagues.</p>
+
+<ul class="block">
+<li>
+<img src="/static/images/minrivertea-small.png">
+<p><a href="http://www.minrivertea.com">www.minrivertea.com</a> <br/>
+Online Chinese tea e-commerce site – this is a new business venture, taking advantage of the high quality teas grown in and around Fuzhou where I live. This site was launched in March 2011, and integrates typical ecommerce features such as payments with Paypal, shopping baskets, ordering processes, and integration with Amazon Fulfillment for shipping of the tea. Currently in development are a number of 'social' features for customers, to enhance the purchase process, such as twitter notifications when your order is shipped. It was 100% designed, developed and coded by me.</p>
+</li>
+
+<li>
+<img src="/static/images/blog.png">
+<p><a href="http://www.westiseast.co.uk">www.westiseast.co.uk</a> <br/>
+My blog site – I've used this site as a playground for technical work, and it was the first website I designed, developed and deployed entirely myself.</p>
+</li>
+
+<li class="last">
+<img src="/static/images/laowai.png">
+<p><a href="http://www.laowailai.com">www.laowailai.com</a> <br/>
+A small side project for foreigners in Fuzhou – after a few chance meetups with fellow foreigners in Fuzhou, I developed a simple news feed and mailing list to help connect Fuzhou's @500 foreigners.</p>
+</li>
+
+</ul>
+
+<h4>Skills and capabilities</h4>
+<p>I am a web all-rounder, able to design and build websites, and also familiar with information architecture and user-centred design (improving user experience on the web) principles and application. Specifically:</p>
+
+<ul>
+<li>HTML/CSS templating</li>
+<li><a href="http://www.python.org">Python</a> programming language </li>
+<li><a href="http://www.djangproject.com">Django</a> web framework </li>
+<li>Use of <a href="http://www.ubuntu.com">Linux (Ubuntu)</a> servers</li>
+<li>Use of <a href="http://www.apache.org">Apache</a>/<a href="http://nginx.org">Nginx</a> webserver software.</li>
+<li>A range of office software (eg. Word, online collaboration tools, project planning tools)</li>
+</ul>
+
+<h4>Education</h4>
+<ul>
+
+<li>Philosophy and Politics BA – University of Sussex (1998-2001)</li>
+<li>4 A-Levels – Chiswick Community College (1996-1998)</li>
+</ul>
+
+
+
+</div>
+
+{% endblock %}

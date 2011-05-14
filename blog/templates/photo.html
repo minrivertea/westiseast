@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block meta-description %}All photos from Westiseast{% endblock %}
+{% block title %}View all photos{% endblock %}
+
+
+{% block content %}
+
+<div id="photo-page">
+
+<h2>{{ photo.title }}</h2>
+
+<div id="get-next-photo"><a href="{% url photo photo.get_next_by_date_added.slug %}">Next photo</a></div>
+
+<img alt="{{ photo.description }}" title="{{ photo.title }}" src="{% thumbnail photo.image 600x600 %}">
+
+<p>{{ photo.description }}</p>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% include "snippets/footer.html" %}{% endblock %}
+
