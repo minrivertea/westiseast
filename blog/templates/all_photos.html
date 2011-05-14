@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load django_static %}
 
 {% block meta-description %}My photography portfolio of photos from Fuzhou, Fujian and across China{% endblock %}
 {% block title %}my China photography portfolio{% endblock %}
@@ -42,19 +42,19 @@ img.flickr {
 <div class="scroll">
 	<div class="pics">
 
-		<div style="background-image:url(/static/images/hass2.jpg)"></div>
-		<div style="background-image:url(/static/images/hass3.jpg)"></div>
-		<div style="background-image:url(/static/images/hass5.jpg)"></div>
-		<div style="background-image:url(/static/images/hass6.jpg)"></div>
-		<div style="background-image:url(/static/images/hass7.jpg)"></div>
-		<div style="background-image:url(/static/images/hass8.jpg)"></div>
-		<div style="background-image:url(/static/images/hass9.jpg)"></div>
-		<div style="background-image:url(/static/images/hass10.jpg)"></div>
-		<div style="background-image:url(/static/images/hass11.jpg)"></div>
+		<div style="background-image:url({% staticfile '/images/hass2.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass3.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass5.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass6.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass7.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass8.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass9.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass10.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/hass11.jpg' %})"></div>
 
 	</div>
 </div>
-<img class="click" src="/static/images/click.png">
+<img class="click" src="{% staticfile '/images/click.png' %}">
 <br clear="all"/>
 <p class="medium-format">Medium format pictures, taken in China and the UK with a Hasselblad 500CM and 2.8 80mm Planar lens</p>
 <br clear="all"/>
@@ -62,16 +62,16 @@ img.flickr {
 <div class="scroll thin">
 	<div class="pics thin">
 
-		<div style="background-image:url(/static/images/faces9.jpg)"></div>
-		<div style="background-image:url(/static/images/faces1.jpg)"></div>
-		<div style="background-image:url(/static/images/faces2.jpg)"></div>
-		<div style="background-image:url(/static/images/faces3.jpg)"></div>
-		<div style="background-image:url(/static/images/faces4.jpg)"></div>
-		<div style="background-image:url(/static/images/faces7.jpg)"></div>
-		<div style="background-image:url(/static/images/faces8.jpg)"></div>
-		<div style="background-image:url(/static/images/faces10.jpg)"></div>
-		<div style="background-image:url(/static/images/faces11.jpg)"></div>
-		<div style="background-image:url(/static/images/faces12.jpg)"></div>
+		<div style="background-image:url({% staticfile '/images/faces9.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces1.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces2.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces3.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces4.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces7.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces8.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces10.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces11.jpg' %})"></div>
+		<div style="background-image:url({% staticfile '/images/faces12.jpg' %})"></div>
 
 	</div>
 </div>
@@ -79,7 +79,7 @@ img.flickr {
 <h3>Portraits</h3>
 <p>I like to take portraits of people - I prefer direct, up close portraits. Most of these portraits are taken with a Nikon D300 and f1.8 50mm lens.</p>
 
-<a href="http://www.flickr.com/photos/west-is-east/" alt="the flickr.com logo" title="see my China photography on Flickr"><img class="flickr" src="/static/images/flickr.png"></a>
+<a href="http://www.flickr.com/photos/west-is-east/" alt="the flickr.com logo" title="see my China photography on Flickr"><img class="flickr" src="{% staticfile '/images/flickr.png' %}"></a>
 <p><a href="http://www.flickr.com/photos/west-is-east/" title="see my China photography on Flickr">View my photos on flickr</a></p>
 </div>
 

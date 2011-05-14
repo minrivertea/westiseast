@@ -40,7 +40,7 @@ USE_I18N = False
 USE_L10N = False
 
 
-MEDIA_ROOT = os.path.join(PROJECT_PATH, "static/")
+MEDIA_ROOT = os.path.join(PROJECT_PATH, "static")
 MEDIA_URL = '/'
 ADMIN_MEDIA_PREFIX = '/admin/media/'
 
