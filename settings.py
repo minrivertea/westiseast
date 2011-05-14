@@ -83,6 +83,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.sitemaps',
+    'django_static',
     'blog',
     'sorl.thumbnail',
 )
