@@ -92,7 +92,7 @@ DJANGO_STATIC_SAVE_PREFIX = '/tmp/cache-forever/westiseast'
 DJANGO_STATIC_NAME_PREFIX = '/cache-forever/westiseast'
 DJANGO_STATIC = True
 DJANGO_STATIC_MEDIA_URL = 'http://static.westiseast.co.uk'
-MEDIA_URL = '//static.westiseast.co.uk/'
+MEDIA_URL = '/'
 
 try:
     from local_settings import *
