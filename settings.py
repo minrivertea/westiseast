@@ -41,7 +41,6 @@ USE_L10N = False
 
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, "static")
-MEDIA_URL = '/'
 ADMIN_MEDIA_PREFIX = '/admin/media/'
 
 # Make this unique, and don't share it with anybody.
@@ -92,7 +91,8 @@ INSTALLED_APPS = (
 DJANGO_STATIC_SAVE_PREFIX = '/tmp/cache-forever/westiseast'
 DJANGO_STATIC_NAME_PREFIX = '/cache-forever/westiseast'
 DJANGO_STATIC = True
-
+DJANGO_STATIC_MEDIA_URL = 'http://static.peterbe.com
+MEDIA_URL = '//static.westiseast.co.uk/'
 
 try:
     from local_settings import *
