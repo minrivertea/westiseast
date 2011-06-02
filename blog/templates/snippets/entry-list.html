@@ -3,7 +3,7 @@
 {% for thing in latest_things %}
   <div class="entry">
 	<a alt="{{ thing.title }}" title="{{ thing.title }}" href="{% url blog_entry thing.slug %}"><span class="link"></span></a>
-	<h3 class="fontface">{{ thing.title }}</h3>
+	<h3 class="fontface"><a href="{% url blog_entry thing.slug %}">{{ thing.title }}</a></h3>
 	<span class="entry-meta"><em>{{ thing.date|date:"d M Y" }}</em></span>  
   </div>
 {% endfor %}
