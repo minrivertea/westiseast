@@ -2,7 +2,7 @@
 {% load thumbnail %}
 {% load django_static %}
 
-{% block meta-description %}{{ entry.summary }}{% endblock %}
+{% block meta-description %}{{ entry.summary|safe }}{% endblock %}
 {% block title %}{{ entry.title }}{% endblock %}
 {% block extrajs %}
 {% endblock %}
