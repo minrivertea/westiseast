@@ -83,7 +83,7 @@ def blog_entry(request, slug):
     entry = get_object_or_404(BlogEntry, slug=slug)
     others = BlogEntry.objects.all().order_by('?')[:2]
     cool_shit = CoolShit.objects.all().order_by('-date_added')[:5]
-    return render_to_response("entry.html", locals())
+    return render(request, "entry.html", locals())
     
 def all_photos(request):
     featured_images = Photo.objects.all().filter(is_featured=True).order_by('-date_added')
