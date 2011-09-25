@@ -34,6 +34,20 @@
 
 <h2>{{ entry.title }}</h2>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http://www.westiseast.co.uk{{ entry.get_absolute_url }}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="minrivertea">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
 
 <p>{{ entry.content|safe }}</p>
 
@@ -44,7 +58,7 @@
 
 </div>
 
-
+<div id="other-entries">
 <h3>Other entries</h3>
 {% if entry.get_next_by_date_added %}
 <p>Next: <a href="{% url blog_entry entry.get_next_by_date_added %}">{{ entry.get_next_by_date_added.title }}</a>
@@ -53,6 +67,7 @@
 {% if entry.get_previous_by_date_added %}
 Previous: <a href="{% url blog_entry entry.get_previous_by_date_added %}">{{ entry.get_previous_by_date_added.title }}</a></p>
 {% endif %}
+</div>
 
 {% endblock %}
 

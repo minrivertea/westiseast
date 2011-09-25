@@ -87,6 +87,8 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
 )
 
+
+
 # django static information
 DJANGO_STATIC_SAVE_PREFIX = '/tmp/cache-forever/westiseast'
 DJANGO_STATIC_NAME_PREFIX = '/cache-forever/westiseast'

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail django_static %}
 
 {% load i18n %}
 
@@ -9,7 +9,12 @@
 
 {% block content %}
 
-
+<div id="intro">
+	<img src="{% staticfile '/images/chris-micro.png' %}">
+	<p>My name is <strong>Chris West</strong>. Not to be confused with the <a href="http://www.christopherwest.com/page.asp?ContentID=121">religious marriage priest Chris West</a>, nor with <a href="http://en.wikipedia.org/wiki/Chris_West">crime writer Chris West</a>, and definitely not with <a href="http://ewrestling.wikia.com/wiki/Chris_West">pro-wrestler Chris West</a>.</p>
+	
+	<p>I'm the Chris West that lives in China, sells tea, builds websites and takes photos.</p>
+</div>
 
 {% include "snippets/entry-list.html" %}
 
