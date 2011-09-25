@@ -96,9 +96,11 @@ div#main {
 div#footer{float:left;width:500px;margin-top:30px}div#footer img{margin-right:10px}div.gallery-listing{margin:40px 0 0 50px;width:350px;height:430px}div.gallery-listing p{margin-bottom:20px}div.dummy{float:right;margin-left:40px;width:490px}div.dummy div.image{float:left;height:150px;margin:0 10px 10px 0}div.dummy div.image img{border:none}div#right{display:none;float:right;margin-right:0px;height:100%;margin-bottom:0px;padding:0px 30px 30px 25px;width:240px;margin-top:20px}div#right h3{border:none;width:none}div#right h4{margin:0 0 -10px 0;text-transform:uppercase;font-size:0.9em;color:#277FA3;font-weight:normal;padding-bottom:5px}div#right ul li{list-style-type:none;font-size:0.8em;font-weight:normal;margin-left:40px;line-height:1.5em}div#right li{padding-bottom:10px;margin-top:0px;margin-bottom:-10px;border-bottom:1px solid #b1b1b1;width:200px}div#right ul.blog{font-size:16px;margin-bottom:20px;margin-top:20px}div#right li.blog{border-bottom:1px solid #E1E1E1;margin-bottom:10px;margin-left:40px;padding-bottom:10px}div#right li a.link{display:none}div#right ul img{position:relative;top:30px;left:2px}div#right ul{margin:0;padding:0}div#rss{font-size:0.8em;float:right;text-align:right}div#rss img{position:relative;top:7px}
 
 #intro {
-  float: right;
-  width: 200px;
-  margin-top: 10px;	
+    background-color: #F1F1F1;
+    float: right;
+    margin: 10px 0 0 0;
+    padding: 15px 20px;
+    width: 200px;
 }
 
 #intro img {
