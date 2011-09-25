@@ -3,7 +3,7 @@
 {% for thing in latest_things %}
   <div class="entry">
 	<a alt="{{ thing.title }}" title="{{ thing.title }}" href="{% url blog_entry thing.slug %}"><span class="link"></span></a>
-	<h3 class="fontface"><a href="{% url blog_entry thing.slug %}">{{ thing.title }}</a></h3>
+	<h3 class="fontface">{% if forloop.first %}[NEW] {% endif %}<a href="{% url blog_entry thing.slug %}">{{ thing.title }}</a></h3>
 	<span class="summary">{{ thing.summary }}</span>
 	<span class="entry-meta">{{ thing.date|date:"d M Y" }}</span>  
 
