@@ -23,7 +23,14 @@ div#entry-content ul {
 	margin:20px 0 20px 45px;
 }
 
-div#entry-content p.entry-meta{margin-top:0;margin-bottom:20px;font-size:90%;color:#666}div#entry-content p.quote{font-style:italic;padding:20px 20px 20px 30px;background-color:#f1f1f1;font-size:0.9em}div#entry-content span.attribution{color:black}
+div#entry-content p.entry-meta {
+	margin-top:0;
+	margin-bottom:20px;
+	font-size:90%;
+	color:#666;
+}
+
+div#entry-content p.quote{font-style:italic;padding:20px 20px 20px 30px;background-color:#f1f1f1;font-size:0.9em}div#entry-content span.attribution{color:black}
 
 h1 {
 	font-family:"helveticaneue","helvetica neue","helveticaneueroman","helveticaneue-roman","helvetica neue roman","helvetica","arial",'texgyreherosregular',"tahoma","geneva",sans-serif;
@@ -221,7 +228,15 @@ div#entry-content {
 	margin: 0 0 100px 20px;
 }
 
-div#entry-content p{font-size:16px;margin-bottom:15px}
+div#entry-content p {
+	font-size:18px;
+	margin-bottom:30px;
+}
+
+div#entry-content p.introduction {
+  font-weight: bold;
+  font-size: 22px;	
+}
 
 div#entry-content a {
     border-bottom: 1px solid #41B7B6;
@@ -280,9 +295,4 @@ pre {
 
 strong {
   font-weight: bold;	
-}
-
-p.introduction {
-  font-weight: bold;
-  font-size: 18px;	
 }
