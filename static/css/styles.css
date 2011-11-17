@@ -17,6 +17,7 @@ p {font-size:105%;line-height:2em}
 
 ol,ul {
 	line-height:2em;
+	font-size: 18px;
 }
 
 div#entry-content ul {
@@ -295,4 +296,8 @@ pre {
 
 strong {
   font-weight: bold;	
+}
+
+span.underline {
+  text-decoration: underline;	
 }
