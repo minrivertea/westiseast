@@ -46,15 +46,19 @@ h1 {
 	font-size:4em;
 	font-weight:600;
 	background:url('/images/logo.png') no-repeat;
-	height:46px;
-	width:250px;
+	height:90px;
+	width:400px;
 }
 
 h1 span{
 	display:none;
 }
 
-h1 a{display:block;height:46px;width:250px}
+h1 a {
+  display:block;
+  height: 90px;
+  width: 400px;
+}
 
 div.gallery-listing h2{color:black;font-family:"helveticaneue","helvetica neue","helveticaneueroman","helveticaneue-roman","helvetica neue roman","helvetica","arial",'texgyreherosregular',"tahoma","geneva",sans-serif;font-size:20px;font-weight:bold;margin:20px 0 10px}
 
@@ -91,7 +95,7 @@ div#container {
 }
 
 div#header {
-	height:100px;
+	height:auto;
 	margin:0 auto;
 	padding-top:30px;
 	width:960px;
