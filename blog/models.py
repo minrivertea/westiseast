@@ -1,10 +1,9 @@
 from django.db import models
 from westiseast.slugify import smart_slugify
-from sorl.thumbnail.fields import ImageWithThumbnailsField
 
 
 class Photo(models.Model):
-    image = ImageWithThumbnailsField(upload_to='photos', thumbnail={'size': (80, 80)})
+    image = models.ImageField(upload_to='photos')
     slug = models.SlugField(max_length=80)
     date_added = models.DateField()
     is_featured = models.BooleanField(default=False)
@@ -13,13 +12,10 @@ class Photo(models.Model):
     
     def __unicode__(self):
         return self.slug
+    
+    def get_type(self):
+        return "Photo"
         
-    def photo_img(self):
-        if self.image:
-            return self.image.thumbnail_tag
-        else:
-            return ""
-    photo_img.short_description = ("Photo")
 
 
 

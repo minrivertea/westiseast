@@ -1,10 +1,18 @@
-
+{% load thumbnail %}
 
 {% for thing in latest_things %}
-  <div class="entry column_{% cycle '1' '2' '3' %} {% if forloop.counter > 3 %}small{% endif %} {% if forloop.counter > 9 %}vsmall{% endif %}">
-	<a alt="{{ thing.title }}" title="{{ thing.title }}" href="{% url blog_entry thing.slug %}"><span class="link"></span></a>
-	<h3>{% if forloop.first %}[NEW] {% endif %}<a href="{% url blog_entry thing.slug %}">{{ thing.title }}</a></h3>
-	<p class="entry-date">{{ thing.date|date:"d M Y" }}</p>  
-
-  </div>
+  <div class="{% if thing.image %}image {% endif %}entry column_{% cycle '1' '2' '3' %} {% if forloop.counter > 3 %}small{% endif %} {% if forloop.counter > 9 %}vsmall{% endif %}">
+	 {% if thing.image %}
+	  	<a href="">
+	  		{% thumbnail thing.image "280" crop="center" as im %}
+	  		<img src="{{ im.url }}"/>
+	  		{% endthumbnail %}
+	  	</a>
+	  	<span id="summary">{{ thing.description|truncatewords:"18" }}</span>
+	{% else %}
+		<a alt="{{ thing.title }}" title="{{ thing.title }}" href="{% url blog_entry thing.slug %}"><span class="link"></span></a>
+		<h3>{% if forloop.first %}[NEW] {% endif %}<a href="{% url blog_entry thing.slug %}">{{ thing.title }}</a></h3>
+		<p class="entry-date">{{ thing.date|date:"d M Y" }}</p>  
+	{% endif %}
+	</div>
 {% endfor %}

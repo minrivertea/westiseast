@@ -220,7 +220,7 @@ a.minriver img:hover {
 	border-bottom: 30px solid #f6f6f6;
 	padding:7px 12px;
 	margin: 0 20px 20px 0;
-	position:absolute;
+	position: absolute;
 	top:0;
 	left:0;
 	box-shadow: 0 1px 3px #e1e1e1;
@@ -228,10 +228,33 @@ a.minriver img:hover {
 	-moz-transition-property:background;
 }
 
+.entry.image {
+  border-bottom: none;
+  padding: 20px 12px;	
+}
+
+.entry.image span#summary {
+  position: absolute;
+  top: 0;
+  left: 0;	
+  padding: 25px 20px;
+  font-size: 24px;
+  display: none;
+  color: #666;
+}
+
 .entry span.link{height:100%;left:0;position:absolute;top:0;width:100%;z-index:1}
 
 #main .entry:hover {
-  	
+   cursor: pointer;
+}
+
+#main .entry.image:hover img {
+  opacity: 0.1;
+}
+
+#main .entry.image:hover span#summary {
+  display: block;
 }
 
 #main .entry:hover h3 a {

@@ -10,25 +10,33 @@ def render(request, template, context_dict=None, **kwargs):
     )
 
 def index(request):
-    latest = []         
+    latest = []    
+    count = 0     
     for entry in BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added'):
+        count +=1
         latest.append(dict(
                            date=entry.date_added,
                            type=entry.get_type(),
                            summary=entry.summary,
                            slug=entry.slug,
-                           title=unicode(entry.title))
-                           ) 
-    for thing in Photo.objects.all().order_by('-date_added'):
+                           title=unicode(entry.title),
+                           order=count)) 
+    
+    count = 0
+    for thing in Photo.objects.all().order_by('-date_added')[:3]:
+        count +=6
         latest.append(dict(
                            date=thing.date_added,
                            type=thing.get_type(),
-                           link=thing.link,
-                           content=thing.get_content(),
-                           title=unicode(thing.title))
-                           ) 
-    latest_things = sorted(latest, reverse=True, key=lambda k: k['date'])[:20]                         
+                           image=thing.image,
+                           slug=thing.slug,
+                           description=thing.description,
+                           title=unicode(thing.title),
+                           order=count,
+                           )) 
+    latest_things = sorted(latest, reverse=False, key=lambda k: k['order'])[:20]                         
     return render(request, "home.html", locals())
+    
     
 def more(request):
     entries = BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added')

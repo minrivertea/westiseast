@@ -8,17 +8,18 @@
 {% block extrajs %}
 <script>
 
-function reSize() {
+function reSize() {    
     var size = 0
     var spacer = 60
+    var total = 0
     $('.column_1').each( function(index) {
     	if (index < 1) {
     	    size = $(this).height() + spacer;
     	} else {
 	        $(this).css('top', size);
-	        newSize = size + $(this).height() + spacer;
-	        size = newSize;
+	        size = size + $(this).height() + spacer; 
     	}
+    	total = total + size;
     });
     var size = 0
     $('.column_2').each( function(index) {
@@ -26,8 +27,8 @@ function reSize() {
     	    size = $(this).height() + spacer;
     	} else {
 	        $(this).css('top', size);
-	        newSize = size + $(this).height() + spacer;
-	        size = newSize;
+	        size = size + $(this).height() + spacer;
+	        
     	}
     });	
     var size = 0
@@ -36,10 +37,13 @@ function reSize() {
     	    size = $(this).height() + spacer;
     	} else {
 	        $(this).css('top', size);
-	        newSize = size + $(this).height() + spacer;
-	        size = newSize;
+	        size = size + $(this).height() + spacer;
+	        
     	}
     });
+
+    newTotal = total/3.7;
+    $('#main').css('height', newTotal.toFixed(0));
     		
 }
 
@@ -58,8 +62,7 @@ $(document).ready( function() {
 #main {
   background-color: transparent;
   padding: 0;
-  width: 960px;
-  height: 1000px;	
+  width: 960px;	
 }
 
 .entry.column_2 {
