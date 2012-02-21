@@ -1,11 +1,11 @@
-{% load i18n %}
+{% load django_static %}
 
 	<div id="header">
 		  
 	  <div id="header-elements">
 	    <h1><a href="{% url home %}"><span>westiseast</span></a></h1>
 	    <div id="site-explanation">Thoughts and <a href="{% url all_photos %}">photography</a> from China by <a href="{% url about %}">Chris West</a> 
-	    <a title="Get the RSS feed" href="/feeds/latest/"><img class="rss" src="/static/images/rss.gif"/></a>
+	    <a title="Get the RSS feed" href="/feeds/latest/"><img class="rss" src="{% staticfile '/images/rss.gif' %}"/></a>
 	    </div>	  	  
 	  </div>
 

@@ -10,10 +10,8 @@ def render(request, template, context_dict=None, **kwargs):
     )
 
 def index(request):
-    entries = BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added')
-    cool_shit = CoolShit.objects.all().order_by('-date_added')
     latest = []         
-    for entry in entries:
+    for entry in BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added'):
         latest.append(dict(
                            date=entry.date_added,
                            type=entry.get_type(),
@@ -21,7 +19,7 @@ def index(request):
                            slug=entry.slug,
                            title=unicode(entry.title))
                            ) 
-    for thing in cool_shit:
+    for thing in Photo.objects.all().order_by('-date_added'):
         latest.append(dict(
                            date=thing.date_added,
                            type=thing.get_type(),
@@ -29,7 +27,7 @@ def index(request):
                            content=thing.get_content(),
                            title=unicode(thing.title))
                            ) 
-    latest_things = sorted(latest, reverse=True, key=lambda k: k['date'])[:10]                         
+    latest_things = sorted(latest, reverse=True, key=lambda k: k['date'])[:20]                         
     return render(request, "home.html", locals())
     
 def more(request):
@@ -76,8 +74,7 @@ def even_more(request):
                            title=unicode(thing.title))
                            ) 
     latest_things = sorted(latest, reverse=True, key=lambda k: k['date']) 
-    return render_to_response("even_more.html", locals())
-    
+    return render_to_response("even_more.html", locals())    
     
 def blog_entry(request, slug):
     entry = get_object_or_404(BlogEntry, slug=slug)

@@ -1,26 +1,80 @@
 {% extends "base.html" %}
 {% load thumbnail django_static %}
 
-{% load i18n %}
-
 {% block meta-description %}Chris West's blog about photography, the web and Fuzhou, China - my home{% endblock %}
 {% block title %}photography, the web and life in China{% endblock %}
 
 
+{% block extrajs %}
+<script>
+
+function reSize() {
+    var size = 0
+    var spacer = 60
+    $('.column_1').each( function(index) {
+    	if (index < 1) {
+    	    size = $(this).height() + spacer;
+    	} else {
+	        $(this).css('top', size);
+	        newSize = size + $(this).height() + spacer;
+	        size = newSize;
+    	}
+    });
+    var size = 0
+    $('.column_2').each( function(index) {
+    	if (index < 1) {
+    	    size = $(this).height() + spacer;
+    	} else {
+	        $(this).css('top', size);
+	        newSize = size + $(this).height() + spacer;
+	        size = newSize;
+    	}
+    });	
+    var size = 0
+    $('.column_3').each( function(index) {
+    	if (index < 1) {
+    	    size = $(this).height() + spacer;
+    	} else {
+	        $(this).css('top', size);
+	        newSize = size + $(this).height() + spacer;
+	        size = newSize;
+    	}
+    });
+    		
+}
+
+$(document).ready( function() {
+	reSize();
+});
+
+</script>
+
+{% endblock %}
+
+
+
+{% block extracss %}
+<style type="text/css">
+#main {
+  background-color: transparent;
+  padding: 0;
+  width: 960px;
+  height: 1200px;	
+}
+
+.entry.column_2 {
+  left: 320px;	
+}
+
+.entry.column_3 {
+  left: 640px;	
+  margin-right: 0;
+}
+</style>
+{% endblock %}
+
 {% block content %}
-<div id="right">
-	<div id="intro">
-		<img src="{% staticfile '/images/chris-micro.png' %}">
-		<p>My name is <strong>Chris West</strong>. Not to be confused with the <a href="http://www.christopherwest.com/page.asp?	ContentID=121">religious marriage priest Chris West</a>, nor with <a href="http://en.wikipedia.org/wiki/Chris_West">crime writer Chris West</a>, and definitely not with <a href="http://ewrestling.wikia.com/wiki/Chris_West">pro-wrestler Chris West</a>.</p>
-	
-		<p>I'm the Chris West that lives in China, sells tea, builds websites and takes photos.</p>
-	</div>
-	
-	<a class="minriver" href="http://www.minrivertea.com" alt="a link to Chinese tea store Min River Tea Farm" title="We sell amazing Chinese teas, direct from China. Try it yourself to taste the difference.">
-		<img src="{% staticfile '/images/minriver-logo.png' %}">
-		Try authentic Chinese tea today &raquo;
-	</a>
-</div>
+
 	
 	
 {% include "snippets/entry-list.html" %}

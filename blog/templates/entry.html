@@ -33,7 +33,9 @@
 <div id="entry-content">
 
 <h2>{{ entry.title }}</h2>
+<p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
 
+{% if ga_is_on %}
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -47,14 +49,9 @@
 
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="minrivertea">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-
+{% endif %}
 
 <p>{{ entry.content|safe }}</p>
-
-<p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
-
-<br />
-
 
 
 </div>
@@ -70,10 +67,6 @@ Previous: <a href="{% url blog_entry entry.get_previous_by_date_added %}">{{ ent
 {% endif %}
 </div>
 
-	<a style="float:right;" class="minriver" href="http://www.minrivertea.com" alt="a link to Chinese tea store Min River Tea Farm" title="We sell amazing Chinese teas, direct from China. Try it yourself to taste the difference.">
-		<img src="{% staticfile '/images/minriver-logo.png' %}">
-		Try authentic Chinese tea today &raquo;
-	</a>
 
 {% endblock %}
 
