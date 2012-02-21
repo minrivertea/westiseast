@@ -34,6 +34,14 @@ ol, ul {
   text-shadow: 2px 1px 0 #fff;
 }
 
+.entry p.entry-date {
+  position: absolute;
+  bottom: -29px;
+  color: #999;
+  text-shadow: 1px 1px 0 #fff;
+  font-size: 14px;	
+}
+
 h1 {
 	font-size:4em;
 	font-weight:600;

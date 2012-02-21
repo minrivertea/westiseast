@@ -4,7 +4,7 @@
   <div class="entry column_{% cycle '1' '2' '3' %} {% if forloop.counter > 3 %}small{% endif %} {% if forloop.counter > 9 %}vsmall{% endif %}">
 	<a alt="{{ thing.title }}" title="{{ thing.title }}" href="{% url blog_entry thing.slug %}"><span class="link"></span></a>
 	<h3>{% if forloop.first %}[NEW] {% endif %}<a href="{% url blog_entry thing.slug %}">{{ thing.title }}</a></h3>
-	<p class="entry-meta">{{ thing.date|date:"d M Y" }}</p>  
+	<p class="entry-date">{{ thing.date|date:"d M Y" }}</p>  
 
   </div>
 {% endfor %}
