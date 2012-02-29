@@ -4,7 +4,19 @@
 
 {% block meta-description %}{{ entry.summary|safe }}{% endblock %}
 {% block title %}{{ entry.title }}{% endblock %}
-{% block extrajs %}
+
+{% block extracss %}
+<style type="text/css">
+#entry-content {
+  position: relative;	
+}
+
+#social {
+  position: absolute;
+  top: 30px;
+  right: 30px;	
+}
+</style>
 {% endblock %}
 
 {% block right %}
@@ -35,9 +47,15 @@
 <h2>{{ entry.title }}</h2>
 <p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
 
+<p>{{ entry.content|safe }}</p>
+
+
+</div>
+
 {% if ga_is_on %}
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
+<div id="social">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
   js = d.createElement(s); js.id = id;
@@ -49,12 +67,11 @@
 
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="minrivertea">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+</div>
 {% endif %}
 
-<p>{{ entry.content|safe }}</p>
 
 
-</div>
 
 <div id="other-entries">
 <h3>Other entries</h3>
