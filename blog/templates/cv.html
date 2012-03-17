@@ -39,8 +39,8 @@ div#entry-content ul.block li {
 }
 
 div#entry-content ul.block li img {
-  float: left;
-  margin: 10px 10px 20px 0px;	
+  margin: 10px 10px 20px 0px;
+  box-shadow: inset 1px 1px 4px #e1e1e1;	
 }
 
 div#entry-content ul.block li.last {
@@ -66,9 +66,15 @@ span.hardtitle {
 
 <ul class="block">
 <li>
-<img src="{% staticfile '/images/minrivertea-small.png' %}">
+<img src="{% staticfile '/images/minrivertea-small.png' %}"><br/>
 <p><a href="http://www.minrivertea.com">www.minrivertea.com</a> <br/>
 An online store selling Chinese tea to the UK. The site is built in Django, and integrates with Paypal through a custom built shopping cart. As well as tight integration with Google Analytics to track usage, goals and ecommerce statistics, the site also has active A/B testing running, constantly improving the design and features through real-time user testing experiments.</p>
+</li>
+
+<li class="last">
+<img src="{% staticfile '/images/laowai.png' %}">
+<p><a href="http://www.laowailai.com">www.laowailai.com</a> <br/>
+A social website for foreigners in Fuzhou – this site has a public news feed for foreigners to keep up with events and info from Fuzhou, and a 'places' directory to find and review restaurants, cafes, museums, activities and tourist spots. It's integrated with Baidu Maps (like Google, but in China) for geo-location and mapping interfaces.</p>
 </li>
 
 <li>
@@ -77,11 +83,20 @@ An online store selling Chinese tea to the UK. The site is built in Django, and 
 An online store for a Fuzhou based decorations company. They design and manufacture wall decorations, and then sell to trade/individuals via their website. The site features shopping basket and payments mechanisms, as well as basic content management features to allow the non-technical founders to effectively manage their products.
 </li>
 
-<li class="last">
-<img src="{% staticfile '/images/laowai.png' %}">
-<p><a href="http://www.laowailai.com">www.laowailai.com</a> <br/>
-A social website for foreigners in Fuzhou – this site has a public news feed for foreigners to keep up with events and info from Fuzhou, and a 'places' directory to find and review restaurants, cafes, museums, activities and tourist spots. It's integrated with Baidu Maps (like Google, but in China) for geo-location and mapping interfaces.</p>
+
+<li>
+<img src="{% staticfile '/images/christmas.png' %}">
+<p><a href="http://www.chinachristmascards.com">www.chinachristmascards.com</a> <br/>
+An adventurous project for a customer selling Christmas cards in China. The design called for quick and simple ordering of Christmas cards for foreigners located in China.
 </li>
+
+<li>
+<img src="{% staticfile '/images/wheninchina.png' %}">
+<p><a href="http://www.wheninchina.com">www.wheninchina.com</a> <br/>
+A simple news aggregator and listing for expats living in China.
+</li>
+
+
 
 <li>
 <img src="{% staticfile '/images/blog.png' %}">
