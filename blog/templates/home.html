@@ -7,50 +7,6 @@
 
 {% block extrajs %}
 <script>
-
-function reSize() {    
-    var size = 0
-    var spacer = 60
-    var total = 0
-    $('.column_1').each( function(index) {
-    	if (index < 1) {
-    	    size = $(this).height() + spacer;
-    	} else {
-	        $(this).css('top', size);
-	        size = size + $(this).height() + spacer; 
-    	}
-    	total = total + size;
-    });
-    var size = 0
-    $('.column_2').each( function(index) {
-    	if (index < 1) {
-    	    size = $(this).height() + spacer;
-    	} else {
-	        $(this).css('top', size);
-	        size = size + $(this).height() + spacer;
-	        
-    	}
-    });	
-    var size = 0
-    $('.column_3').each( function(index) {
-    	if (index < 1) {
-    	    size = $(this).height() + spacer;
-    	} else {
-	        $(this).css('top', size);
-	        size = size + $(this).height() + spacer;
-	        
-    	}
-    });
-
-    newTotal = total/3.7;
-    $('#main').css('height', newTotal.toFixed(0));
-    		
-}
-
-$(document).ready( function() {
-	reSize();
-});
-
 </script>
 
 {% endblock %}
@@ -59,44 +15,13 @@ $(document).ready( function() {
 
 {% block extracss %}
 <style type="text/css">
-#main {
-  background-color: transparent;
-  padding: 0;
-  width: 960px;	
-}
 
-.entry.column_2 {
-  left: 320px;	
-}
-
-.entry.column_3 {
-  left: 640px;	
-  margin-right: 0;
-}
-
-#facebook {
-  position: absolute;
-  right: 0;
-  top: -80px;	
-}
 </style>
 {% endblock %}
 
 {% block content %}
 
-	
-	<div id="facebook">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-				<div class="fb-like" data-href="http://westiseast.co.uk" data-send="false" data-layout="box_count" data-width="45" data-show-faces="false"></div>
 
-</div>
 	
 {% include "snippets/entry-list.html" %}
 
