@@ -1,5 +1,2 @@
 {% load thumbnail %}
 
-{% for thing in latest_things %}
-  <a class="entry" href="{% url blog_entry thing.slug %}">{{ thing.title }}</a>
-{% endfor %}

@@ -29,8 +29,25 @@
 
 <body>
 
-	{% include "snippets/header.html" %}
+	<div id="header">
+		  
+	  <div id="header-elements">
+	    <h1><a href="{% url home %}"><span>westiseast</span></a></h1>
+	    <div id="site-explanation">Thoughts and <a href="{% url all_photos %}">photography</a> from China by <a href="{% url about %}">Chris West</a> 
+	    <a title="Get the RSS feed" href="/feeds/latest/"><img class="rss" src="{% staticfile '/images/rss.gif' %}"/></a>
+	    </div>	  	  
+	  </div>
+	  	    <nav>
+	       <ul class="main-nav">
+	           <li><a href="/" class="">Home</a></li>
+	           <li><a href="/about/" class="">About</a></li>
+	           <li><a href="/cv/" class="">CV</a></li>
+	           <li><a href="/photography/" class="">Photography</a></li>
+	       </ul>
+	    </nav>
 
+
+	</div>
 <div id="container">
 
 	<div id="main">

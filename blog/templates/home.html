@@ -23,7 +23,10 @@
 
 
 	
-{% include "snippets/entry-list.html" %}
+{% for thing in latest_things %}
+  <a class="entry" href="{% url blog_entry thing.slug %}">{{ thing.title }}</a>
+{% endfor %}
+
 
 <a class="see-more" href="{% url more %}">See older blog entries...</a>
 
