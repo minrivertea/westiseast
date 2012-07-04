@@ -123,12 +123,12 @@ div#language-selector{float:right;font-size:0.8em;margin-right:30px;margin-top:4
 #plug {
     background-color: #E1ECF3;
     float: left;
-    font-size: 32px;
-    margin-bottom: 100px;
+    font-size: 28px;
+    margin: 0 0 100px 30px;
     padding: 20px 40px;
-    width: 880px;
-    text-shadow: 1px 1px 0 #fff;
+    text-shadow: 1px 1px 0 #FFFFFF;
 }
+
 #plug a {
   text-decoration: underline;	
 }
@@ -294,8 +294,8 @@ span.read-more{font-size:12px}
 }
 
 #entry-content a:hover {
-  color: #ff00b4;	
-  border-bottom: 1px solid #ff00b4;
+  color: #D75701;
+  border-bottom: 1px solid #D75701;
 }
 
 #entry-content ul, #entry-content ol {
