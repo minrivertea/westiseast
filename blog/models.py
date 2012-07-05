@@ -40,6 +40,7 @@ class BlogEntry(models.Model):
         
     def get_type(self):
         return "Blog"
+    
         
 class CoolShit(models.Model):
     link = models.URLField()

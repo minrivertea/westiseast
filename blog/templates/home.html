@@ -15,7 +15,12 @@
 
 {% block extracss %}
 <style type="text/css">
-
+p.summary {
+  margin: 0 0 30px 0;
+  font-size: 14px;
+  line-height: 1.8em;
+  padding-right: 200px;   
+}
 </style>
 {% endblock %}
 
@@ -23,8 +28,9 @@
 
 
 	
-{% for thing in latest_things %}
+{% for thing in entries %}
   <a class="entry" href="{% url blog_entry thing.slug %}">{{ thing.title }}</a>
+  {% if forloop.counter < 4 %}<p class="summary">{{ thing.content|striptags|truncatewords:"80" }}</p>{% endif %}
 {% endfor %}
 
 
