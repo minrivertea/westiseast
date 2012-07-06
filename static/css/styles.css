@@ -17,7 +17,8 @@ h1 {
 	font-weight:600;
 	background:url('/images/logo.png') no-repeat;
 	height:50px;
-	width:300px;
+	width:auto;
+	margin: 10px 0;
 }
 
 h1 span{
@@ -76,6 +77,11 @@ h4 {
 
 #header #header-elements {
   padding: 20px;   
+}
+
+#header #site-explanation {
+  font-size: 14px;
+  line-height: 1.8em;
 }
 
 #header nav {
