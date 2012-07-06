@@ -1,6 +1,7 @@
 from westiseast.blog.models import BlogEntry, Photo, CoolShit
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 #render shortcut
 def render(request, template, context_dict=None, **kwargs):
@@ -10,7 +11,21 @@ def render(request, template, context_dict=None, **kwargs):
     )
 
 def index(request):
-    entries = BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added')[:20]                        
+    entries = BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added')                        
+    paginator = Paginator(entries, 20)
+    
+    # Make sure page request is an int. If not, deliver first page.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    # If page request (9999) is out of range, deliver last page of results.
+    try:
+        entries = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        entries = paginator.page(paginator.num_pages)
+    
     return render(request, "home.html", locals())
     
     

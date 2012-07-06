@@ -21,20 +21,46 @@ p.summary {
   line-height: 1.8em;
   padding-right: 200px;   
 }
+
+span.current {
+  float: left;
+  width: 100%;
+  margin: 0 0 20px 0;
+  display: block;   
+}
 </style>
 {% endblock %}
 
 {% block content %}
 
 
+{% if page > 1 %}
+    <span class="current">
+            Showing page {{ entries.number }} of {{ entries.paginator.num_pages }}.
+    </span>
+{% endif %}
 	
-{% for thing in entries %}
+{% for thing in entries.object_list %}
   <a class="entry" href="{% url blog_entry thing.slug %}">{{ thing.title }}</a>
-  {% if forloop.counter < 4 %}<p class="summary">{{ thing.content|striptags|truncatewords:"80" }}</p>{% endif %}
+  {% if page < 2 %}{% if forloop.counter < 4 %}<p class="summary">{{ thing.content|striptags|truncatewords:"80" }}</p>{% endif %}{% endif %}
 {% endfor %}
 
+<div class="pagination">
+    <span class="step-links">
+        {% if entries.has_previous %}
+            <a href="?page={{ entries.previous_page_number }}">previous</a>
+        {% endif %}
 
-<a class="see-more" href="{% url more %}">See older blog entries...</a>
+        <span class="current">
+            Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
+        </span>
+
+        {% if entries.has_next %}
+            <a href="?page={{ entries.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
 
 
 

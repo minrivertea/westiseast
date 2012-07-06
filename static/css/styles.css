@@ -231,6 +231,7 @@ a.minriver img:hover {
     width: 100%;
 	-moz-transition-duration:300ms;
 	-moz-transition-property:background;
+	float: left;
 }
 
 .entry.image {
