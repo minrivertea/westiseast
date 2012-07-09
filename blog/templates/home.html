@@ -19,14 +19,31 @@ p.summary {
   margin: 0 0 30px 0;
   font-size: 14px;
   line-height: 1.8em;
-  padding-right: 200px;   
+  padding-right: 200px;  
+  float: left;   
+ 
 }
 
 span.current {
   float: left;
   width: 100%;
   margin: 0 0 20px 0;
-  display: block;   
+  display: block;
+}
+
+.entry img {
+ float: left;
+ width: auto;
+ margin-right: 30px;   
+}
+
+span.desc {
+  float: left;
+  width: 600px;
+  font-weight: normal;
+  font-size: 14px; 
+  color: #404040;
+  line-height: 1.8em;  
 }
 </style>
 {% endblock %}
@@ -41,8 +58,14 @@ span.current {
 {% endif %}
 	
 {% for thing in entries.object_list %}
-  <a class="entry" href="{% url blog_entry thing.slug %}">{{ thing.title }}</a>
-  {% if page < 2 %}{% if forloop.counter < 4 %}<p class="summary">{{ thing.content|striptags|truncatewords:"80" }}</p>{% endif %}{% endif %}
+  {% if thing.get_type == 'photo' %}
+      {% thumbnail thing.image "300x300" crop="" as im %}
+        <a href="{% url photo thing.slug %}" class="entry"><img src="{{ im.url }}"/>{{ thing.title }}<br/><span class="desc">{{ thing.description|safe|truncatewords:"30" }}</span></a>
+      {% endthumbnail %}
+  {% else %}
+      <a class="entry" href="{% url blog_entry thing.slug %}">{{ thing.title }}</a>
+      <p class="summary">{{ thing.content|striptags|truncatewords:"80" }}</p>
+  {% endif %}
 {% endfor %}
 
 <div class="pagination">

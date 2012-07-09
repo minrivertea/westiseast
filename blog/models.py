@@ -14,7 +14,7 @@ class Photo(models.Model):
         return self.slug
     
     def get_type(self):
-        return "Photo"
+        return "photo"
         
 
 
@@ -39,7 +39,7 @@ class BlogEntry(models.Model):
         return self.summary
         
     def get_type(self):
-        return "Blog"
+        return "blog"
     
         
 class CoolShit(models.Model):

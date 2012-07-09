@@ -11,7 +11,18 @@ def render(request, template, context_dict=None, **kwargs):
     )
 
 def index(request):
-    entries = BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added')                        
+    entries_list = []
+    blogs = BlogEntry.objects.filter(is_draft=False, is_gallery=False)                       
+    photos = Photo.objects.all()
+    
+    for x in blogs:
+        entries_list.append(x)
+    
+    for x in photos:
+        entries_list.append(x)
+        
+    entries = sorted(entries_list, reverse=True, key=lambda k: k.date_added)      
+    
     paginator = Paginator(entries, 20)
     
     # Make sure page request is an int. If not, deliver first page.
@@ -28,58 +39,16 @@ def index(request):
     
     return render(request, "home.html", locals())
     
-    
-def more(request):
-    entries = BlogEntry.objects.filter(is_draft=False, is_gallery=False).order_by('-date_added')
-    cool_shit = CoolShit.objects.all().order_by('-date_added')
-    latest = []         
-    for entry in entries:
-        latest.append(dict(
-                           date=entry.date_added,
-                           type=entry.get_type(),
-                           summary=entry.summary,
-                           slug=entry.slug,
-                           title=unicode(entry.title))
-                           ) 
-    for thing in cool_shit:
-        latest.append(dict(
-                           date=thing.date_added,
-                           type=thing.get_type(),
-                           link=thing.link,
-                           content=thing.get_content(),
-                           title=unicode(thing.title))
-                           ) 
-    latest_things = sorted(latest, reverse=True, key=lambda k: k['date'])[10:20]  
-    return render_to_response("more.html", locals())
-    
-def even_more(request):
-    entries = BlogEntry.objects.all().filter(is_draft=False, is_gallery=False).order_by('-date_added')
-    cool_shit = CoolShit.objects.all().order_by('-date_added')
-    latest = []         
-    for entry in entries:
-        latest.append(dict(
-                           date=entry.date_added,
-                           type=entry.get_type(),
-                           summary=entry.summary,
-                           slug=entry.slug,
-                           title=unicode(entry.title))
-                           ) 
-    for thing in cool_shit:
-        latest.append(dict(
-                           date=thing.date_added,
-                           type=thing.get_type(),
-                           link=thing.link,
-                           content=thing.get_content(),
-                           title=unicode(thing.title))
-                           ) 
-    latest_things = sorted(latest, reverse=True, key=lambda k: k['date']) 
-    return render_to_response("even_more.html", locals())    
+      
     
 def blog_entry(request, slug):
     entry = get_object_or_404(BlogEntry, slug=slug)
-    others = BlogEntry.objects.all().order_by('?')[:2]
-    cool_shit = CoolShit.objects.all().order_by('-date_added')[:5]
     return render(request, "entry.html", locals())
+    
+
+def photo(request, slug):
+    photo = get_object_or_404(Photo, slug=slug)
+    return render(request, "photo.html", locals())
     
 def all_photos(request):
     featured_images = Photo.objects.all().filter(is_featured=True).order_by('-date_added')
