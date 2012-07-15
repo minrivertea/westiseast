@@ -12,6 +12,17 @@
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 	<link rel="stylesheet" href="{% staticfile '/css/mobile.css' %} />
+	
+	<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+	
 </head> 
 <body> 
 
@@ -29,14 +40,26 @@
 
 {% if ga_is_on %}
 <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+$('[data-role=page]').live('pageshow', function (event, ui) {
+    try {
+        _gaq.push(['_setAccount', 'UA-9041614-1']);
+
+        hash = location.hash;
+
+        if (hash) {
+            _gaq.push(['_trackPageview', hash.substr(1)]);
+        } else {
+            _gaq.push(['_trackPageview']);
+        }
+    } catch(err) {
+
+    }
+
+});
+
+
 </script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-9041614-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 {% endif %}
 
 </body>
