@@ -5,10 +5,16 @@
 
     <div data-role="content">
         <h1>{{ photo.title }}</h1>
-        {% thumbnail photo.image "600x600" crop="" as im %}
-        <img alt="{{ photo.description|striptags }}" title="{{ photo.title }}" src="{{ im.url }}">
+        {% thumbnail photo.image "400x400" crop="" as im %}
+        <img id="image" alt="{{ photo.description|striptags }}" title="{{ photo.title }}" src="{{ im.url }}">
         {% endthumbnail %}
 
         <p>{{ photo.description|safe }}</p>
     </div>
 </div>
+
+<script type="text/javascript">
+ $(document).bind('pageinit', function() {
+     $('#image').width($(window).width());
+ });
+</script>

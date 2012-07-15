@@ -3,6 +3,12 @@
 {% block meta-description %}{{ photo.description }}{% endblock %}
 {% block title %}{{ photo.title }}{% endblock %}
 
+{% block extrajs %}
+<script type="text/css">
+$('#placeholder').width($(window).width());
+</script>
+{% endblock %}
+
 {% block extracss %}
 <style type="text/css">
 </style>
