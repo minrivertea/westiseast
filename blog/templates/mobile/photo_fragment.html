@@ -15,6 +15,7 @@
 
 <script type="text/javascript">
  $(document).bind('pageinit', function() {
-     $('#image').width($(window).width());
+     var photoWidth = (window.innerWidth - 30)
+     $('#image').width(photoWidth);
  });
 </script>
