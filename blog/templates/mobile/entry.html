@@ -19,15 +19,18 @@
 {% block content %}
 
 
-<div data-role="page" id="entry">
+<div data-role="page" id="entry" data-theme="b">
 
-<h1>{{ entry.title }}</h1>
-<p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
+    {% include 'snippets/header_mobile.html' %}
 
-{{ entry.content|safe }}
+    <div data-role="content">
+        <h1>{{ entry.title }}</h1>
+        <p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
 
+        {{ entry.content|safe }}
+    </div>
+    
 </div>
-
 {% endblock %}
 
 

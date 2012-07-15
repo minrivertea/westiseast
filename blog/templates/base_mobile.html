@@ -1,4 +1,4 @@
-
+{% load django_static %}
 
 <!DOCTYPE html> 
 <html> 
@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-	<link rel="stylesheet" href="{{ static_url }}css/mobile.css" />
+	<link rel="stylesheet" href="{% staticfile '/css/mobile.css' %} />
 </head> 
 <body> 
 
