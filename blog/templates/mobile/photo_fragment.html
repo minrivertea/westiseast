@@ -1,6 +1,7 @@
 {% load thumbnail %}
-<div data-role="page" id="photo" data-theme="a">
+<div data-role="page" id="photo" data-theme="a" >
 
+    <div data-role="header"></div>
     <div data-role="content">
         {% thumbnail photo.image "500x500" crop="" as im %}
         <img id="image" alt="{{ photo.description|striptags }}" title="{{ photo.title }}" src="{{ im.url }}">
