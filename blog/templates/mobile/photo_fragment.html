@@ -1,5 +1,5 @@
 {% load thumbnail %}
-<div data-role="page" id="photo" data-theme="b">
+<div data-role="page" id="photo" data-theme="a">
 
     <div data-role="content">
         {% thumbnail photo.image "500x500" crop="" as im %}
@@ -9,11 +9,3 @@
         <p>{{ photo.description|safe }}</p>
     </div>
 </div>
-
-<script type="text/javascript">
- $(document).bind('pageinit', function() {
-     var photoWidth = (window.innerWidth - 30)
-     $('#image').width(photoWidth);
-     alert(photoWidth);
- });
-</script>

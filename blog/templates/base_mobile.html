@@ -21,6 +21,12 @@
 {% block content %}
 {% endblock %}
 
+<script type="text/javascript">
+ $(document).bind('pageinit', function(event) {
+     var photoWidth = (window.innerWidth - 30)
+     $('#photo #image').width(photoWidth);
+ });
+</script>
 
 </body>
 </html>
