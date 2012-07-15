@@ -2,13 +2,26 @@ from westiseast.blog.models import BlogEntry, Photo, CoolShit
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import django_mobile
 
 #render shortcut
 def render(request, template, context_dict=None, **kwargs):
+    
+    if is_mobile_ajax(request):
+        template = template.replace('.html', '_fragment.html')
+        
     return render_to_response(
         template, context_dict or {}, context_instance=RequestContext(request),
                               **kwargs
     )
+
+def is_mobile_ajax(request):
+    result = False   
+    if request.is_ajax() and django_mobile.get_flavour(request) == 'mobile':
+        result = True        
+    
+    return result
+
 
 def index(request):
     entries_list = []
@@ -36,6 +49,7 @@ def index(request):
         entries = paginator.page(page)
     except (EmptyPage, InvalidPage):
         entries = paginator.page(paginator.num_pages)
+    
     
     return render(request, "home.html", locals())
     

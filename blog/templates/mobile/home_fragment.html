@@ -1,0 +1,53 @@
+{% load thumbnail %}
+
+<div data-role="page" id="home" data-theme="b">
+
+    {% include 'snippets/header_mobile.html' %}
+
+    <div data-role="content" data-theme="c">
+        {% if page > 1 %}
+            <span class="current">
+                    Showing page {{ entries.number }} of {{ entries.paginator.num_pages }}
+            </span>
+        {% endif %}
+
+        <ul data-role="listview">
+        {% for thing in entries.object_list %}
+          <li>
+          {% if thing.get_type == 'photo' %}
+              <a href="{% url photo thing.slug %}">
+              {% thumbnail thing.image "300x300" crop="center" as im %}
+                <img class="ui-li-thumb" src="{{ im.url }}"/>
+                <h3>{{ thing.title }}</h3>
+                <p class="desc">{{ thing.description|safe|truncatewords:"30" }}</p>
+              {% endthumbnail %}
+              </a>
+          {% else %}
+              <a class="entry" href="{% url blog_entry thing.slug %}">
+                <h3>{{ thing.title }}</h3>
+                <p class="desc">{{ thing.content|striptags|truncatewords:"80" }}</p>
+              </a>
+          {% endif %}
+          </li>
+        {% endfor %}
+        <ul>
+
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if entries.has_previous %}
+                    <a href="?page={{ entries.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
+                </span>
+        
+                {% if entries.has_next %}
+                    <a href="?page={{ entries.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+
+</div>

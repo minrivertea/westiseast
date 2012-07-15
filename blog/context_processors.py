@@ -5,12 +5,10 @@ def common(request):
     from westiseast import settings
     context = {}
     context['ga_is_on'] = settings.GA_IS_ON
-    
-    print django_mobile.get_flavour(request)
+        
+    context['base_template'] = settings.BASE_TEMPLATE
     
     if django_mobile.get_flavour(request) == 'mobile':    
-        context['base_template'] = settings.BASE_TEMPLATE_MOBILE
-    else:
-        context['base_template'] = settings.BASE_TEMPLATE
+        context['base_template'] = settings.BASE_TEMPLATE_MOBILE    
         
     return context
