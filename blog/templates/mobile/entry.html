@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load django_static %}
+
+{% block meta-description %}{{ entry.summary|safe }}{% endblock %}
+{% block title %}{{ entry.title }}{% endblock %}
+
+{% block extracss %}
+<style type="text/css">
+
+</style>
+{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div data-role="page" id="entry">
+
+<h1>{{ entry.title }}</h1>
+<p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
+
+{{ entry.content|safe }}
+
+</div>
+
+{% endblock %}
+
+

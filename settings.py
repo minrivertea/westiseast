@@ -47,6 +47,7 @@ ADMIN_MEDIA_PREFIX = '/admin/media/'
 SECRET_KEY = ''
 
 TEMPLATE_LOADERS = (
+    'django_mobile.loader.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
@@ -58,6 +59,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
     'westiseast.blog.context_processors.common',
+    'django_mobile.context_processors.flavour',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -66,6 +68,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django_mobile.middleware.MobileDetectionMiddleware',
+    'django_mobile.middleware.SetFlavourMiddleware',
 )
 
 ROOT_URLCONF = 'westiseast.urls'
@@ -85,8 +89,13 @@ INSTALLED_APPS = (
     'django_static',
     'blog',
     'sorl.thumbnail',
+    'django_mobile',
 )
 
+
+FLAVOURS_TEMPLATE_PREFIX = ''
+BASE_TEMPLATE = 'base.html'
+BASE_TEMPLATE_MOBILE = 'base_mobile.html'
 
 
 # django static information
