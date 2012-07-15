@@ -1,0 +1,28 @@
+{% extends base_template %}
+{% load thumbnail %}
+
+{% block meta-description %}{{ photo.description }}{% endblock %}
+{% block title %}{{ photo.title }}{% endblock %}
+
+{% block extracss %}
+<style type="text/css">
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div data-role="page" id="entry" data-theme="b">
+
+    {% include 'snippets/header_mobile.html' %}
+
+    <div data-role="content">
+        <h1>{{ photo.title }}</h1>
+        {% thumbnail photo.image "600x600" crop="" as im %}
+        <img alt="{{ photo.description|striptags }}" title="{{ photo.title }}" src="{{ im.url }}">
+        {% endthumbnail %}
+
+        <p>{{ photo.description|safe }}</p>
+    </div>
+</div>
+{% endblock %}
+
