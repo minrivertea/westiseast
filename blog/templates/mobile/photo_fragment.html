@@ -5,7 +5,7 @@
 
     <div data-role="content">
         <h1>{{ photo.title }}</h1>
-        {% thumbnail photo.image "400x400" crop="" as im %}
+        {% thumbnail photo.image "500x500" crop="" as im %}
         <img id="image" alt="{{ photo.description|striptags }}" title="{{ photo.title }}" src="{{ im.url }}">
         {% endthumbnail %}
 
