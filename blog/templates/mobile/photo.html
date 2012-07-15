@@ -1,4 +1,3 @@
-{% extends base_template %}
 {% load thumbnail %}
 
 {% block meta-description %}{{ photo.description }}{% endblock %}
@@ -10,8 +9,7 @@
 {% endblock %}
 
 {% block content %}
-
-<div data-role="page" id="entry" data-theme="b">
+<div data-role="page" id="photo" data-theme="b">
 
     {% include 'snippets/header_mobile.html' %}
 
