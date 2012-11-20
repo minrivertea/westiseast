@@ -41,7 +41,7 @@ USE_L10N = False
 
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, "static")
-ADMIN_MEDIA_PREFIX = '/admin/media/'
+STATIC_URL = '/static/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ''
@@ -54,7 +54,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.media',
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
