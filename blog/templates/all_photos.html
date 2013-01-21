@@ -92,7 +92,7 @@ div#plug {
             <p class="photo"><img class="image" src="{{ im.url }}" /></p>
         {% endthumbnail %}
         
-        <p class="caption"><span class="date">{{ photo.date_added|date:"d M Y" }} ~ </span> {{ photo.description }}</p>
+        <p class="caption"><span class="date">{{ photo.date_added|date:"d M Y" }} ~ </span> {{ photo.description|striptags }}</p>
     {% endfor %}
     
 
