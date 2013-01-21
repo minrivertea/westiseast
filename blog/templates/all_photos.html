@@ -1,95 +1,82 @@
 {% extends "base.html" %}
-{% load django_static %}
+{% load thumbnail endless %}
 
 {% block meta-description %}My photography portfolio of photos from Fuzhou, Fujian and across China{% endblock %}
 {% block title %}my China photography portfolio{% endblock %}
 
 {% block extrajs %}
-<script>
-$(function() {
-
-// enable circular scrollables with a click handler
-$(".scroll").scrollable({ circular: true }).click(function() {
-	$(this).data("scrollable").next();		
-});
-});
+<script type="text/javascript">
+    $(document).ready( function() {
+        $('#header').animate({
+            left: '-220',
+        }, 500); 
+        $('#header').addClass('reduced');
+        $('#expand').toggle();
+        $('#expand').bind('click', expandHeader);
+           
+    });
+    
+    function expandHeader(e) {
+        if ($('#header').hasClass('reduced')) {
+            $('#header').animate({left: '0',}, 500).removeClass('reduced');
+            $('#header #expand').html('&laquo;');
+        } else {
+            $('#header').animate({left: '-220',}, 500).addClass('reduced');
+            $('#header #expand').html('&raquo;');
+        }
+    }
+    
+    
 </script>
-
 {% endblock %}
 
 {% block extracss %}
 <style type="text/css">
-div#entry-content {
-  width: 900px;	
+
+#header {
+  position: fixed;   
 }
 
+div#entry-content {
+  width: 900px;	
+  margin: 0% 20%;
+}
 
+#entry-content .image {
+  margin: 7% 0 20px;   
+}
+
+#entry-content .caption {
+  font-size: 13px; 
+  font-style: italic;
+  width: 500px;  
+}
 
 img.flickr {
   float: left;
   margin-right: 20px;	
 }
 
+div#plug {
+  display: none;   
+}
+
+
+
 </style>
 {% endblock %}
 
 {% block content %}
 
-
 <div id="entry-content">
 
-<br/>
-<div class="scroll">
-	<div class="pics">
-
-		<div style="background-image:url({% staticfile '/images/hass2.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass3.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass5.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass6.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass7.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass8.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass9.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass10.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/hass11.jpg' %})"></div>
-
-	</div>
-</div>
-<p class="medium-format"><strong>Medium format pictures</strong>, taken in China and the UK with a Hasselblad 500CM and 2.8 80mm Planar lens</p>
-<br clear="all"/>
-
-<h3>Portraits</h3>
-
-<p style="float: left; width: 400px;">I like to take portraits of people - I prefer direct, up close portraits. Most of these portraits are taken with a Nikon D300 and f1.8 50mm lens.
-<br/><br/>
-<a href="http://www.flickr.com/photos/west-is-east/" alt="the flickr.com logo" title="see my China photography on Flickr"><img class="flickr" src="{% staticfile '/images/flickr.png' %}"></a>
-<a href="http://www.flickr.com/photos/west-is-east/" title="see my China photography on Flickr">View my photos on flickr</a>
-
-
-</p>
-
-<div class="scroll thin">
-	<div class="pics thin">
-
-		<div style="background-image:url({% staticfile '/images/faces9.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces1.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces2.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces3.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces4.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces7.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces8.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces10.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces11.jpg' %})"></div>
-		<div style="background-image:url({% staticfile '/images/faces12.jpg' %})"></div>
-
-	</div>
-</div>
-
-
-
-</div>
-
-
-
+    {% for photo in photos %}
+        {% thumbnail photo.image "500" crop="" as im %}
+            <img class="image" src="{{ im.url }}" />
+        {% endthumbnail %}
+        <p class="caption">{{ photo.description }}</p>
+    {% endfor %}
+    
 
 
 {% endblock %}

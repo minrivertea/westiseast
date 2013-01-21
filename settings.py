@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'blog',
     'sorl.thumbnail',
     'django_mobile',
+    'endless_pagination',
 )
 
 

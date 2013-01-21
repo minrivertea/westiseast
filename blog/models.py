@@ -1,5 +1,7 @@
 from django.db import models
 from westiseast.slugify import smart_slugify
+from django.core.urlresolvers import reverse
+
 
 
 class Photo(models.Model):
@@ -11,11 +13,12 @@ class Photo(models.Model):
     title = models.CharField(max_length=200)
     
     def __unicode__(self):
-        return self.slug
+        return self.title
     
-    def get_type(self):
-        return "photo"
-        
+    def get_absolute_url(self):
+        url = reverse('photo', args=[self.slug])
+        return url
+
 
 
 

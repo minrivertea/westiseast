@@ -26,12 +26,8 @@ def is_mobile_ajax(request):
 def index(request):
     entries_list = []
     blogs = BlogEntry.objects.filter(is_draft=False, is_gallery=False)                       
-    photos = Photo.objects.all()
-    
+        
     for x in blogs:
-        entries_list.append(x)
-    
-    for x in photos:
         entries_list.append(x)
         
     entries = sorted(entries_list, reverse=True, key=lambda k: k.date_added)      
@@ -61,22 +57,16 @@ def blog_entry(request, slug):
     
 
 def photo(request, slug):
-    photo = get_object_or_404(Photo, slug=slug)
+    
+    if request.is_ajax():
+        pass
+    
     return render(request, "photo.html", locals())
     
 def all_photos(request):
-    featured_images = Photo.objects.all().filter(is_featured=True).order_by('-date_added')
-    entries = BlogEntry.objects.all().filter(is_draft=False, is_gallery=True).order_by('-date_added')
-    entries_and_photos = []
-    for entry in entries:
-        entries_and_photos.append((entry, entry.related_photos.all()[:1]))
-    return render_to_response("all_photos.html", locals())
+    photos = Photo.objects.all()    
+    return render(request, "all_photos.html", locals())
     
-def gallery(request, slug):
-    entry = get_object_or_404(BlogEntry, slug=slug)
-    photos = entry.related_photos.all().order_by('-date_added')
-    other_galleries = BlogEntry.objects.all().filter(is_gallery=True).order_by('-date_added')
-    return render_to_response("gallery.html", locals())
     
 
 
