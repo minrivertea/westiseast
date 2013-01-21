@@ -387,6 +387,10 @@ pre {
     word-wrap: break-word;
 }
 
+pre span.filename {
+  color: red;   
+}
+
 
 span.underline {
   text-decoration: underline;	
