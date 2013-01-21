@@ -365,12 +365,26 @@ div#comments{border-top:1px solid #E1E1E1;float:left;margin-bottom:40px;padding-
 
 p.medium-format{float:left; margin-left: 20px; width: 270px;}
 
+code, pre {
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    font-family: Menlo,Monaco,"Courier New",monospace;
+    font-size: 12px;
+    padding: 0 3px 2px;
+}
+
 pre {
-    background-color: #F6F6F6;
-    border: 1px solid #E1E1E1;
-    margin-bottom: 20px;
-    padding: 0 20px 0 40px;
-    overflow: scroll;
+    background-color: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    font-size: 12.025px;
+    line-height: 18px;
+    margin: 0 0 9px;
+    padding: 8.5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 
