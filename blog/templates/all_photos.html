@@ -43,13 +43,30 @@ div#entry-content {
 }
 
 #entry-content .image {
-  margin: 7% 0 20px;   
 }
 
 #entry-content .caption {
-  font-size: 13px; 
-  font-style: italic;
-  width: 500px;  
+    border-bottom: 1px dashed #C1C1C1;
+    font-family: Georgia;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0;
+    padding: 20px 10px 60px;
+    width: 480px;
+}
+
+#entry-content p.photo {
+  margin: 60px 0 10px;   
+  text-align: center;
+  width: 500px;
+}
+
+#entry-content .date {
+  margin: 0 0 0px 0px;
+  font-size: 16px;
+    font-family: Georgia;
+  color: #000;
+       
 }
 
 img.flickr {
@@ -71,10 +88,11 @@ div#plug {
 <div id="entry-content">
 
     {% for photo in photos %}
-        {% thumbnail photo.image "500" crop="" as im %}
-            <img class="image" src="{{ im.url }}" />
+        {% thumbnail photo.image "500x500" crop="" as im %}
+            <p class="photo"><img class="image" src="{{ im.url }}" /></p>
         {% endthumbnail %}
-        <p class="caption">{{ photo.description }}</p>
+        
+        <p class="caption"><span class="date">{{ photo.date_added|date:"d M Y" }} ~ </span> {{ photo.description }}</p>
     {% endfor %}
     
 

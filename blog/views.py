@@ -64,7 +64,7 @@ def photo(request, slug):
     return render(request, "photo.html", locals())
     
 def all_photos(request):
-    photos = Photo.objects.all()    
+    photos = Photo.objects.all().order_by('-date_added')  
     return render(request, "all_photos.html", locals())
     
     
