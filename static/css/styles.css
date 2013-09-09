@@ -54,7 +54,7 @@ h4 {
 }
 
 	
-#container {
+.container {
     margin-left: 255px;
     overflow: hidden;
     padding: 35px 35px 35px 0;
@@ -63,11 +63,8 @@ h4 {
 
 #header {
     background: none repeat scroll 0 0 #F1F1F1;
-    border-right: 1px solid #C2C2C2;
-    height: 100px;
-    left: 0;
+    height: 240px;
     padding: 0;
-    top: 0;
     width: 100%;
 }
 

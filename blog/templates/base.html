@@ -30,7 +30,7 @@
 <body>
 
 	<div id="header">
-		  
+	   <div class="container">	  
 	  <div id="header-elements">
 	    <img src="{% staticfile '/images/chris-micro.jpg' %}"/>
 	    <h1><a href="{% url home %}"><span>westiseast</span></a></h1>
@@ -45,11 +45,10 @@
 	           <li><a href="/photography/" class="">Photography</a></li>
 	       </ul>
 	    </nav>
-	  <div id="expand">&raquo;</div>
-
-
+	  </div>
 	</div>
-<div id="container">
+	
+<div class="container">
 
 	<div id="main">
 	{% block content %} {% endblock %}
