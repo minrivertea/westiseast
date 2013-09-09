@@ -33,9 +33,10 @@ function removeOverlay() {
     $('.overlay').remove();
 }       
 
-    $('#entry-content img').click(function() {
-        makeOverlay('<img src="'+this+'"/>');     
-    });
+$('#entry-content img').click(function() {
+    var imageClone = this.clone();
+    makeOverlay(imageClone);     
+});
 
 </script>
 {% endblock %}
