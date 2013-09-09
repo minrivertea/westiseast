@@ -467,7 +467,6 @@ span.underline {
 #overlay-inner {
     background: none repeat scroll 0 0 #FFFFFF;
     bottom: 0;
-    box-shadow: 0 1px 10px #000000;
     left: 0;
     margin: auto;
     padding: 30px;
@@ -476,4 +475,5 @@ span.underline {
     top: 0;
     width: 70%;
     z-index: 20000;
+    height: 80%;
 }
