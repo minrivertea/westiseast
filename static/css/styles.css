@@ -61,7 +61,7 @@ h4 {
     position: relative;
 }
 
-#header.container {
+#header .container {
   padding-top: 0;   
 }
 
