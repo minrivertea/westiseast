@@ -466,12 +466,14 @@ span.underline {
 
 #overlay-inner {
     background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 0;
     box-shadow: 0 1px 10px #000000;
-    left: 50%;
-    margin: 0 auto 0 -300px;
-    padding: 30px 35px;
+    left: 0;
+    margin: auto;
+    padding: 30px;
     position: fixed;
-    top: 15%;
-    width: 600px;
+    right: 0;
+    top: 0;
+    width: 70%;
     z-index: 20000;
 }
