@@ -55,10 +55,12 @@ h4 {
 
 	
 .container {
-    margin-left: 255px;
-    overflow: hidden;
+    left: 0;
+    margin: 0 auto;
     padding: 35px 35px 35px 0;
-    position: relative;
+    position: absolute;
+    right: 0;
+    width: 60%;
 }
 
 #header .container {
@@ -73,7 +75,7 @@ h4 {
 }
 
 #header #header-elements {
-  padding: 20px;
+  padding: 20px 0;
   float: left;   
 }
 
@@ -86,12 +88,12 @@ h4 {
 }
 
 #header #site-explanation {
-  font-size: 14px;
-  line-height: 1.8em;
+  float: left;
 }
 
 #header nav {
-  margin: 15px 0 0 0;   
+  margin: 15px 0 0 0; 
+  float: left;  
 }
 
 #header nav ul {
@@ -125,8 +127,6 @@ div#language-selector{float:right;font-size:0.8em;margin-right:30px;margin-top:4
 
 
 #main {
-    background-color: #FFFFFF;
-    padding: 20px 40px 40px;
     float: left;
     width: 100%;
     position: relative;
@@ -285,7 +285,6 @@ span.read-more{font-size:12px}
 
 #entry-content {
 	color:#555;
-	width:70%;
 	float:left;
 	margin: 0 0 30px 0px;
 }
