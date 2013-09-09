@@ -34,9 +34,7 @@ function removeOverlay() {
 }       
 
     $('#entry-content img').click(function() {
-        alert($(this).html());
-        alert(this);
-        makeOverlay($(this).html());     
+        makeOverlay('<img src="'+this+'"/>');     
     });
 
 </script>
