@@ -117,13 +117,11 @@ h4 {
     position: relative;
     text-transform: uppercase;
     border-radius: 5px 5px 0 0;
+    padding: 0 0 5px 0;
 }
 
 #header nav a:hover {
-    background: none repeat scroll 0 0 #D75701;
-    border-right: 0 none;
-    color: #FFFFFF;
-    text-shadow: none;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 
