@@ -469,11 +469,25 @@ span.underline {
     bottom: 0;
     left: 0;
     margin: auto;
-    padding: 30px;
     position: fixed;
     right: 0;
     top: 0;
-    width: 70%;
+    width: 100%;
     z-index: 20000;
-    height: 80%;
+    height: 100%;
 }
+
+#overlay-inner > img {
+    bottom: 0;
+    height: 90%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+
+
