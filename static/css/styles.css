@@ -68,16 +68,10 @@ h4 {
 }
 
 #header {
-    background: #07a8ff; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #07a8ff 0%, #0e57cc 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#07a8ff), color-stop(100%,#0e57cc)); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover,  #07a8ff 0%,#0e57cc 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover,  #07a8ff 0%,#0e57cc 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover,  #07a8ff 0%,#0e57cc 100%); /* IE10+ */
-background: radial-gradient(ellipse at center,  #07a8ff 0%,#0e57cc 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07a8ff', endColorstr='#0e57cc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-    height: 240px;
+    background: none repeat scroll 0 0 #F1F1F1;
+    border-bottom: 5px solid #E9E9E9;
+    height: 190px;
+    margin-bottom: 40px;
     padding: 0;
     width: 100%;
 }
@@ -88,11 +82,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07a8ff', end
 }
 
 #header img {
-  float: left;   
+  float: left;
+  margin: 0 20px 0 0;   
 }
 
 #header h1 {
-  float: left;   
+    bottom: 140px;
+    left: 230px;
+    position: absolute;
 }
 
 #header #site-explanation {
@@ -100,23 +97,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07a8ff', end
 }
 
 #header nav {
-  margin: 15px 0 0 0; 
-  float: left;  
+    float: left;
+    right: 40px;
+    margin: 0px 0 0;
+    position: absolute;
+    width: auto;
+    bottom: 85px;
 }
 
 #header nav ul {
-    border-top: 1px solid #D2D2D2;
+    float: left;
     list-style: none outside none;
     margin-left: 0;
+    padding: 0;
+}
+
+#header nav ul li {
+  float:left;
+  margin-right: 5px;   
 }
 
 #header nav a {
-    color: #404040;
-    display: block;
-    font-weight: 500;
-    padding: 15px 30px;
+    background: none repeat scroll 0 0 #E1E1E1;
+    float: left;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 15px;
     position: relative;
-    text-shadow: 0 1px 1px #F9F9F9;
+    text-transform: uppercase;
+    border-radius: 5px 5px 0 0;
 }
 
 #header nav a:hover {
