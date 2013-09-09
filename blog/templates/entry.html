@@ -11,11 +11,33 @@
   position: relative;	
 }
 
-#social {
-  position: absolute;
-  top: -10px;
-}
 </style>
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript">
+
+
+function makeOverlay(HTML) {
+    var overlay = jQuery('<div id="overlay" class="overlay" style="display:none"> </div>');
+    overlay.appendTo(document.body);
+    overlay.fadeIn(300);
+    var overlayInner = jQuery('<div id="overlay-inner" class="overlay"> </div>');
+    overlayInner.appendTo(document.body);
+    overlayInner.html(jQuery(HTML));
+    overlay.bind('click', removeOverlay);
+    $('.close').bind('click', removeOverlay);
+}
+
+function removeOverlay() {
+    $('.overlay').remove();
+}       
+
+    $('#entry-content img').click {
+        makeOverlay($(this).html();     
+    }
+
+</script>
 {% endblock %}
 
 {% block banner %}
