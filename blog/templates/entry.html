@@ -54,7 +54,7 @@ $('#entry-content img').click(function() {
 <h2>{{ entry.title }}</h2>
 <p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
 
-<p>{{ entry.content|safe }}</p>
+{{ entry.content|safe }}
 
 
 </div>
