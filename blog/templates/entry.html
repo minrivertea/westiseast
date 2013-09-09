@@ -34,8 +34,9 @@ function removeOverlay() {
 }       
 
 $('#entry-content img').click(function() {
-    var imageClone = this.clone();
-    makeOverlay(imageClone);     
+    var $clone = $(this).clone();
+    alert($clone);
+    makeOverlay($clone);     
 });
 
 </script>
