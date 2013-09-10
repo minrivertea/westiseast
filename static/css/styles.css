@@ -16,20 +16,15 @@ body, ul, ol, p {
 h1 {
 	font-size:4em;
 	font-weight:600;
-	background:url('/images/logo.png') no-repeat;
 	height:50px;
 	width:auto;
 	margin: 10px 0;
 }
 
-h1 span{
-	display:none;
-}
-
 h1 a {
-  display:block;
-  height: 50px;
-  width: 200px;
+    display: block;
+    width: auto;
+    color: #000;
 }
 
 h2 {
@@ -77,7 +72,7 @@ h4 {
 }
 
 #header #header-elements {
-  padding: 20px 0;
+  padding: 0px 0;
   float: left;   
 }
 
@@ -88,7 +83,10 @@ h4 {
 
 #header h1 {
     float: left;
-    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 47px 30px 0 0;
+    text-transform: uppercase;
 }
 
 #header #site-explanation {
@@ -97,7 +95,7 @@ h4 {
 
 #header nav {
     float: left;
-    margin: 47px 0 0 30px;
+    margin: 47px 0 0 0px;
     width: auto;
 }
 
@@ -127,7 +125,16 @@ h4 {
 }
 
 
-div#language-selector{float:right;font-size:0.8em;margin-right:30px;margin-top:40px}div#nav-links{font-size:0.8em;text-align:center;text-transform:uppercase;width:960px}div#nav-links a{margin-right:50px}div#nav-links img.rss{position:relative;top:7px;margin:0 5px 0 5px}div#banner{height:250px;border-bottom:1px solid #e1e1e1;margin-bottom:50px;float:left;width:900px;padding-left:40px}div#banner img{margin:25px 20px 0 0;float:left}div.banner-caption{background-color:#e6e6e6;float:left;height:25px;padding:5px 20px 0 30px;position:relative;text-align:right;top:-30px}div.banner-caption a{color:black;font-size:0.8em}div.banner-caption a:hover{color:white}
+div#language-selector{float:right;font-size:0.8em;margin-right:30px;margin-top:40px}div#nav-links{font-size:0.8em;text-align:center;text-transform:uppercase;width:960px}div#nav-links a{margin-right:50px}div#nav-links 
+
+img.rss {
+    margin-left: 10px;
+    position: absolute;
+    right: 0;
+    top: 47px;
+}
+
+div#banner{height:250px;border-bottom:1px solid #e1e1e1;margin-bottom:50px;float:left;width:900px;padding-left:40px}div#banner img{margin:25px 20px 0 0;float:left}div.banner-caption{background-color:#e6e6e6;float:left;height:25px;padding:5px 20px 0 30px;position:relative;text-align:right;top:-30px}div.banner-caption a{color:black;font-size:0.8em}div.banner-caption a:hover{color:white}
 
 
 #main {
