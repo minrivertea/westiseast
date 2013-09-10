@@ -53,7 +53,7 @@ h4 {
 .container {
     left: 0;
     margin: 0 auto;
-    padding: 35px 35px 35px 0;
+    padding: 0px 35px 35px 0;
     position: absolute;
     right: 0;
     width: 50%;
@@ -146,10 +146,11 @@ div#banner{height:250px;border-bottom:1px solid #e1e1e1;margin-bottom:50px;float
 #plug {
     background-color: #E1ECF3;
     float: left;
-    font-size: 28px;
-    margin: 0 0 100px 30px;
-    padding: 20px 40px;
+    font-size: 23px;
+    margin: 0 0 100px;
+    padding: 20px 5%;
     text-shadow: 1px 1px 0 #FFFFFF;
+    width: 90%;
 }
 
 #plug a {
@@ -236,12 +237,17 @@ a.minriver img:hover {
     display: block;
     font-size: 18px;
     font-weight: 500;
-    margin-left: -34px;
-    padding: 15px 35px;
+    margin-left: -0px;
+    padding: 15px 0px 0px;
     width: 100%;
 	-moz-transition-duration:300ms;
 	-moz-transition-property:background;
 	float: left;
+}
+
+#main .entry:first-child {
+  border-top: none;
+  padding-top: 0;   
 }
 
 .entry.image {
