@@ -9,7 +9,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body, ul, ol, p {
     color: #404040;
     font-family: "Myriad Pro", Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6em;
 }
 
@@ -28,8 +28,8 @@ h1 a {
 }
 
 h2 {
-    color: #333333;
-    font-size: 35px;
+    color: #8FBC8F;
+    font-size: 40px;
     font-weight: normal;
     letter-spacing: -1px;
     margin: 0px 0 10px;
@@ -56,7 +56,7 @@ h4 {
     padding: 0px 35px 35px 0;
     position: absolute;
     right: 0;
-    width: 50%;
+    width: 45%;
 }
 
 #header .container {
@@ -146,7 +146,7 @@ div#banner{height:250px;border-bottom:1px solid #e1e1e1;margin-bottom:50px;float
 #plug {
     background-color: #E1ECF3;
     float: left;
-    font-size: 23px;
+    font-size: 21px;
     margin: 0 0 100px;
     padding: 20px 5%;
     text-shadow: 1px 1px 0 #FFFFFF;
@@ -235,14 +235,16 @@ a.minriver img:hover {
     background-color: rgba(255, 255, 255, 0.8);
     border-top: 1px solid #C2C2C2;
     display: block;
-    font-size: 18px;
+    float: left;
+    font-size: 17px;
     font-weight: 500;
-    margin-left: -0px;
-    padding: 15px 0px 0px;
+    letter-spacing: 1px;
+    margin-left: 0;
+    padding: 15px 0 0;
+    text-transform: uppercase;
+    transition-duration: 300ms;
+    transition-property: background;
     width: 100%;
-	-moz-transition-duration:300ms;
-	-moz-transition-property:background;
-	float: left;
 }
 
 #main .entry:first-child {
@@ -309,7 +311,8 @@ span.read-more{font-size:12px}
 }
 
 #entry-content p.introduction {
-  font-size: 22px;	
+  font-size: 26px;
+  color: #000;	
 }
 
 #entry-content a {
