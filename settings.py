@@ -4,7 +4,9 @@ import os
 PROJECT_PATH = os.path.abspath(os.path.split(__file__)[0])
 
 
+
 DEBUG = False
+GA_IS_ON = DEBUG
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -85,8 +87,6 @@ INSTALLED_APPS = (
     'django_static',
     'blog',
     'sorl.thumbnail',
-    'django_mobile',
-    'endless_pagination',
 )
 
 

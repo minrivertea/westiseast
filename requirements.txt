@@ -1,5 +1,4 @@
 mysql-python
-Django
 django_static
 django_mobile
 sorl-thumbnail

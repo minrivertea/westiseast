@@ -1,5 +1,4 @@
 from django.db import models
-from westiseast.slugify import smart_slugify
 from django.core.urlresolvers import reverse
 
 
