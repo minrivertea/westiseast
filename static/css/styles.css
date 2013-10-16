@@ -8,9 +8,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body, ul, ol, p {
     color: #404040;
-    font-family: "Myriad Pro", Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 18px;
-    line-height: 1.8em;
+    font-family: "Droid Serif", Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2em;
 }
 
 h1 {
