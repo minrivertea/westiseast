@@ -14,6 +14,10 @@ body, ul, ol, p {
     line-height: 2em;
 }
 
+strong {
+  font-weight: 600;   
+}
+
 h1 {
 	font-size:4em;
 	font-weight:600;
