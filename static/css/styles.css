@@ -9,7 +9,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body, ul, ol, p {
     color: #333;
     font-family: "Bitter", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 2.4em;
 }
@@ -310,6 +310,7 @@ span.read-more{font-size:12px}
 }
 
 #entry-content p.introduction {
+    font-size: 22px;
 }
 
 #entry-content a {
