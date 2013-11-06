@@ -25,7 +25,8 @@
     {% block extracss %}{% endblock %}
     {% block extrahead %}{% endblock %}
     
-<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>                                
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -33,9 +34,9 @@
 	<div id="header">
 	   <div class="container">	  
 	     <div id="header-elements">
-	    <h1><a href="{% url home %}"><span>westiseast</span></a></h1>
-	    <a title="Get the RSS feed" href="/feeds/latest/"><img class="rss" src="{% staticfile '/images/rss.gif' %}"/></a>
-	    </div>	  	  
+	       <h1><a href="{% url home %}"><span>westiseast</span></a></h1>
+	       <a title="Get the RSS feed" href="/feeds/latest/"><img class="rss" src="{% staticfile '/images/rss.gif' %}"/></a>
+	    	  	  
 
   	    <nav>
 	       <ul class="main-nav">
@@ -43,6 +44,8 @@
 	           <li><a href="/photography/" class="">Photography</a></li>
 	       </ul>
 	    </nav>
+	  </div>
+	  
 	  </div>
 	</div>
 	
