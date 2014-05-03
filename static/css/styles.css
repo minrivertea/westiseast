@@ -83,15 +83,16 @@ h4 {
 }
 
 #header #mugshot {
-   float: left;
+   float: right;
    position: relative;
    top: 10px;
-   margin: 0 20px 0 0;
+   margin: 0 0px 0 20px;
 }
 
 #header img.rss {
-  float: right;
-  margin: 18px 20px 0 0;   
+    float: left;
+    position: relative;
+    top: 7px;
 }
 
 #header h1 {
@@ -138,12 +139,6 @@ h4 {
 
 div#language-selector{float:right;font-size:0.8em;margin-right:30px;margin-top:40px}div#nav-links{font-size:0.8em;text-align:center;text-transform:uppercase;width:960px}div#nav-links a{margin-right:50px}
 
-
-img.rss {
-    position: absolute;
-    right: 15px;
-    top: 30px;
-}
 
 div#banner{height:250px;border-bottom:1px solid #e1e1e1;margin-bottom:50px;float:left;width:900px;padding-left:40px}div#banner img{margin:25px 20px 0 0;float:left}div.banner-caption{background-color:#e6e6e6;float:left;height:25px;padding:5px 20px 0 30px;position:relative;text-align:right;top:-30px}div.banner-caption a{color:black;font-size:0.8em}
 
