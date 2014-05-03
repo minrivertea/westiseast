@@ -300,8 +300,8 @@ span.read-more{font-size:12px}
 
 #social {
     position: absolute;
-    right: 0;
-    top: -30px;
+    left: 0;
+    top: -25px;
 }
 
 #entry-content {
