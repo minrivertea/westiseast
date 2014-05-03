@@ -69,7 +69,7 @@ h4 {
 }
 
 #header {
-    height: 90px;
+    height: 120px;
     padding: 0;
     width: 100%;
 }
@@ -78,19 +78,27 @@ h4 {
     float: left;
     padding: 0;
     width: 100%;
+    height: 120px;
     border-bottom: 1px solid #f1f1f1;
 }
 
-#header img {
-  float: left;
-  margin: 0 20px 0 0;   
+#header #mugshot {
+   float: left;
+   position: relative;
+   top: 10px;
+   margin: 0 20px 0 0;
+}
+
+#header img.rss {
+  float: right;
+  margin: 18px 20px 0 0;   
 }
 
 #header h1 {
     float: left;
     font-size: 20px;
     font-weight: normal;
-    margin: 15px 30px 0 0;
+    margin: 40px 30px 0 0;
 }
 
 #header #site-explanation {
@@ -99,7 +107,7 @@ h4 {
 
 #header nav {
     float: left;
-    margin: 15px 0 0 0px;
+    margin: 40px 0 0 0px;
     width: auto;
 }
 
