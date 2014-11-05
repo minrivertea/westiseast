@@ -22,14 +22,11 @@ class Photo(models.Model):
 
 
 class BlogEntry(models.Model):
-    slug = models.SlugField(max_length=80)
-    related_photos = models.ManyToManyField(Photo, blank=True, null=True)
-    date_added = models.DateField()
-    is_gallery = models.BooleanField(default=False)
-    is_draft = models.BooleanField(default=True)
     title = models.CharField(max_length=200)
-    summary = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=80)
+    date_added = models.DateField()
     content = models.TextField()
+    is_draft = models.BooleanField(default=True)
     
     def __unicode__(self):
         return self.slug

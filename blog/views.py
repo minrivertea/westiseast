@@ -25,7 +25,7 @@ def is_mobile_ajax(request):
 
 def index(request):
     entries_list = []
-    blogs = BlogEntry.objects.filter(is_draft=False, is_gallery=False)                       
+    blogs = BlogEntry.objects.filter(is_draft=False)                       
         
     for x in blogs:
         entries_list.append(x)
