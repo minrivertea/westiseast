@@ -213,7 +213,7 @@ span.read-more{font-size:12px}
 #social {
     position: absolute;
     right: 0;
-    top: 0px;
+    top: -20px;
 }
 
 #entry-content {
