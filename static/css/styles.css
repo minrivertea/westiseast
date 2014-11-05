@@ -6,10 +6,16 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	padding:0
 }
 
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: "Bitter",Georgia,serif;
+}
+
 body, ul, ol, p {
     color: #333;
     font-family: "Bitter",Georgia,serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
     line-height: 2.4em;
 }
@@ -36,6 +42,16 @@ h1 a {
     color: #000;
 }
 
+h1 {
+    color: #333;
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    line-height: 1.4em;
+    margin: 0;
+    padding: 0;
+}
+
 h2 {
     color: #333;
     font-size: 28px;
@@ -60,27 +76,18 @@ h4 {
 
 	
 .container {
-    left: 0;
-    margin: 0 auto;
-    padding: 0px 35px 35px 0;
-    position: absolute;
-    right: 0;
-    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
 }
 
 #header {
-    height: 120px;
-    padding: 0;
-    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    background: #f6f6f6;
 }
 
-#header #header-elements {
-    float: left;
-    padding: 0;
-    width: 100%;
-    height: 120px;
-    border-bottom: 1px solid #f1f1f1;
-}
 
 #header #mugshot {
    float: right;
@@ -144,22 +151,16 @@ div#banner{height:250px;border-bottom:1px solid #e1e1e1;margin-bottom:50px;float
 
 
 
-#main {
-    float: left;
-    width: 100%;
-    position: relative;
-}
-
 #plug {
+    background: #f6f6f6;
     border-top: 1px solid #E9E9E9;
-    float: left;
-    font-size: 18px;
-    margin: 0 0 100px;
-    padding-top: 20px;
+    font-size: 22px;
+    margin: 0 0 0px;
+    padding-top: 30px;
+    padding-bottom: 50px;
     text-align: center;
     text-shadow: 1px 1px 0 #FFFFFF;
-    width: 100%;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 #plug a {
@@ -167,7 +168,6 @@ div#banner{height:250px;border-bottom:1px solid #e1e1e1;margin-bottom:50px;float
 }
 
 
-div#footer{float:left;width:500px;margin-top:30px}div#footer img{margin-right:10px}div.gallery-listing{margin:40px 0 0 50px;width:350px;height:430px}div.gallery-listing p{margin-bottom:20px}div.dummy{float:right;margin-left:40px;width:490px}div.dummy div.image{float:left;height:150px;margin:0 10px 10px 0}div.dummy div.image img{border:none}
 
 div#right h3{border:none;width:none}div#right h4{margin:0 0 -10px 0;text-transform:uppercase;font-size:0.9em;color:#277FA3;font-weight:normal;padding-bottom:5px}div#right ul li{list-style-type:none;font-size:0.8em;font-weight:normal;margin-left:40px;line-height:1.5em}div#right li{padding-bottom:10px;margin-top:0px;margin-bottom:-10px;border-bottom:1px solid #b1b1b1;width:200px}div#right ul.blog{font-size:16px;margin-bottom:20px;margin-top:20px}div#right li.blog{border-bottom:1px solid #E1E1E1;margin-bottom:10px;margin-left:40px;padding-bottom:10px}div#right li a.link{display:none}div#right ul img{position:relative;top:30px;left:2px}div#right ul{margin:0;padding:0}
 
@@ -314,7 +314,7 @@ span.read-more{font-size:12px}
 }
 
 #entry-content p.introduction {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 #entry-content a {

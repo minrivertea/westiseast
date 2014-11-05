@@ -2,7 +2,6 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 
-
 class Photo(models.Model):
     image = models.ImageField(upload_to='photos')
     slug = models.SlugField(max_length=80)
@@ -17,7 +16,6 @@ class Photo(models.Model):
     def get_absolute_url(self):
         url = reverse('photo', args=[self.slug])
         return url
-
 
 
 

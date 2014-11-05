@@ -16,11 +16,12 @@
 	<title>westiseast.co.uk - {% block title %}{% endblock %}</title>
 	
 	
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	
 	<link rel="stylesheet" type="text/css" media="screen" href="{% staticfile '/css/styles.css' %}" />
 	
 	<script src="{% staticfile '/js/jquery-1.6.min.js' %}" type="application/javascript"></script>
-	<script src="{% staticfile '/js/jquery.tools.min.js' %}" type="application/javascript"></script>
-
 
     {% block extracss %}{% endblock %}
     {% block extrahead %}{% endblock %}
@@ -31,38 +32,35 @@
 
 <body>
 
-	<div id="header">
-	   <div class="container">	  
-	     <div id="header-elements">
-	     
-	       <img id="mugshot" src="{% staticfile '/images/chris-mugshot.png' %}" />
-	     
-	       <h1><a href="{% url home %}"><span>westiseast</span></a></h1>
+<div id="header" class="pure-g">
+   <div class="container">	  
+	  <div class="pure-u-1">     
+        <img id="mugshot" src="{% staticfile '/images/chris-mugshot.png' %}" />
+        <h1><a href="{% url home %}"><span>westiseast</span></a></h1>
 	       
   	    <nav>
 	       <ul class="main-nav">
 	           <li><a href="/about/" class="">About</a></li>
 	           <li><a href="http://www.flickr.com/photos/west-is-east" class="">My photography (Flickr)</a></li>
-	           <li><a title="Get the RSS feed" href="/feeds/latest/"><img class="rss" src="{% staticfile '/images/rss.gif' %}"/></a></li>
+	           <li><a title="Get the RSS feed" href="/feeds/latest/">
+	               <img class="rss" src="{% staticfile '/images/rss.gif' %}"/></a>
+	           </li>
 	       </ul>
 	    </nav>
-	    
 	  </div>
-	  
-	  </div>
-	</div>
+    </div>
+</div>
 	
 <div class="container">
 
-	<div id="main">
+	<div id="main" class="pure-u-1">
 	{% block content %} {% endblock %}
 	</div>
-	<div id="plug">
-		Like tea? Try Min River Tea for <a href="http://www.minrivertea.com">amazingly authentic Chinese teas &raquo;</a>
-	</div>
 
-	{% block footer %}{% endblock %}
+</div>
 
+<div id="plug" class="pure-u-1">
+		Do you like tea? I source and sell <a href="http://www.minrivertea.com">some of the best Chinese tea in the UK &raquo;</a>
 </div>
 
 {% block extrajs %}{% endblock %}
