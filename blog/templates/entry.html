@@ -50,13 +50,27 @@ $('#entry-content img').click(function() {
 
 <div id="entry-content">
 
-<h1>{{ entry.title }}</h1>
-<p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
+    <h1>{{ entry.title }}</h1>
+    <p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
+    {{ entry.content|safe }}
+    
+    {% if entry %}
 
-{{ entry.content|safe }}
+    <div class="plug">
+        Do you like tea? I source and sell <a href="http://www.minrivertea.com">some of the best Chinese tea in the UK &raquo;</a>
+    </div>
 
+<script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments"
+    data-href="http://www.westiseast.co.uk/{{ entry.get_absolute_url }}"
+    data-width="800"
+    data-first_party_property="BLOGGER"
+    data-view_type="FILTERED_POSTMOD">
+</div>	
+{% endif %}
 
 </div>
+
 
 {% if ga_is_on %}
 <div id="social">

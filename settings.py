@@ -6,7 +6,7 @@ PROJECT_PATH = os.path.abspath(os.path.split(__file__)[0])
 
 
 DEBUG = False
-GA_IS_ON = DEBUG
+GA_IS_ON = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
