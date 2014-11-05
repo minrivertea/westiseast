@@ -28,19 +28,10 @@ strong {
   font-weight: 600;   
 }
 
-h1 {
-	font-size:4em;
-	font-weight:600;
-	height:50px;
-	width:auto;
-	margin: 10px 0;
+#logo a {
+  color: #000;
 }
 
-h1 a {
-    display: block;
-    width: auto;
-    color: #000;
-}
 
 h1 {
     color: #333;
@@ -70,7 +61,7 @@ h4 {
 #main h3 {
     color: #000000;
     font-size: 22px;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding-top: 0px;
 }
 
