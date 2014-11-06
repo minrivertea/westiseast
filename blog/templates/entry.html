@@ -13,12 +13,19 @@
 #similar {
   border-top: 1px solid #e1e1e1; 
   padding: 20px 0 10px;
+  
 }
 
 #similar ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  color: #777;
+  font-size: 11px;
+}
+
+#similar ul a {
+  font-size: 15px;   
 }
 
 </style>
@@ -75,7 +82,7 @@ $('#entry-content img').click(function() {
         <h3>Read next:</h3>
         <ul>
         {% for o  in others %}
-            <li><a href="{{ o.get_absolute_url }}">{{ o.title }}</a></li>
+            <li><a href="{{ o.get_absolute_url }}">{{ o.title }}</a> - {{ o.date_added|date:"D d M Y" }}</li>
         {% endfor %}
         </ul>
     </div>
