@@ -10,6 +10,17 @@
   position: relative;	
 }
 
+#similar {
+  border-top: 1px solid #e1e1e1; 
+  padding: 20px 0 10px;
+}
+
+#similar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 </style>
 {% endblock %}
 
@@ -59,8 +70,17 @@ $('#entry-content img').click(function() {
     </p>
     {{ entry.content|safe }}
     
-    {% if entry %}
-
+    {% if others %}
+    <div id="similar" class="pure-u-1">
+        <h3>Read next:</h3>
+        <ul>
+        {% for o  in others %}
+            <li><a href="{{ o.get_absolute_url }}">{{ o.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    
     <div class="plug">
         Do you like tea? I source and sell <a href="http://www.minrivertea.com">some of the best Chinese tea in the UK &raquo;</a>
     </div>
@@ -72,7 +92,6 @@ $('#entry-content img').click(function() {
     data-first_party_property="BLOGGER"
     data-view_type="FILTERED_POSTMOD">
 </div>	
-{% endif %}
 
 </div>
 
