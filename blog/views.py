@@ -76,7 +76,11 @@ def blog_entries(request):
 def blog_entry(request, slug):
     entry = get_object_or_404(BlogEntry, slug=slug)
     others = entry.tags.similar_objects()
-        
+    try:
+        others = others[:2]
+    except IndexError:
+        pass
+                
     return render(request, "entry.html", locals())
     
 
