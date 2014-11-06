@@ -49,6 +49,10 @@ span.desc {
 {% block content %}
 
 
+{% if tag %}
+<p>Showing all entries tagged <a href="{% url blog_entries %}?tag={{ tag }}">{{ tag }}</a></p>
+{% endif %}
+
 {% if page > 1 %}
     <span class="current">
             Showing page {{ entries.number }} of {{ entries.paginator.num_pages }}.

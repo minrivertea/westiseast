@@ -49,7 +49,29 @@ def index(request):
     
     return render(request, "home.html", locals())
     
-      
+def blog_entries(request):
+        
+    if request.GET.get('tag'):
+        tag = request.GET.get('tag')
+        entries = BlogEntry.objects.filter(is_draft=False, tags__name__in=[tag])
+    else:
+        entries = BlogEntry.objects.filter(is_draft=False)
+        
+    paginator = Paginator(entries, 20)
+    # Make sure page request is an int. If not, deliver first page.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    # If page request (9999) is out of range, deliver last page of results.
+    try:
+        entries = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        entries = paginator.page(paginator.num_pages)
+    
+    return render(request, 'home.html', locals())
+     
     
 def blog_entry(request, slug):
     entry = get_object_or_404(BlogEntry, slug=slug)

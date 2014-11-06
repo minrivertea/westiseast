@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail django_static%}
+{% load thumbnail django_static %}
 
 {% block meta-description %}{{ entry.content|truncatewords:"20"|striptags }}{% endblock %}
 {% block title %}{{ entry.title }}{% endblock %}
@@ -51,7 +51,12 @@ $('#entry-content img').click(function() {
 <div id="entry-content">
 
     <h1>{{ entry.title }}</h1>
-    <p class="entry-meta"><em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em></p>
+    <p class="entry-meta">
+        <em>This was posted on: {{ entry.date_added|date:"D d M Y" }}</em>
+        {% if entry.tags.all %}
+            | {% for t in entry.tags.all %}<a href="{% url blog_entries %}?tag={{ t }}">{{ t }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+        {% endif %}
+    </p>
     {{ entry.content|safe }}
     
     {% if entry %}

@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 
+from taggit.managers import TaggableManager
+
 
 class Photo(models.Model):
     image = models.ImageField(upload_to='photos')
@@ -25,6 +27,8 @@ class BlogEntry(models.Model):
     date_added = models.DateField()
     content = models.TextField()
     is_draft = models.BooleanField(default=True)
+    
+    tags = TaggableManager()
     
     def __unicode__(self):
         return self.slug

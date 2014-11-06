@@ -87,6 +87,7 @@ INSTALLED_APPS = (
     'django_static',
     'blog',
     'sorl.thumbnail',
+    'taggit',
 )
 
 
