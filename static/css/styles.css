@@ -16,7 +16,7 @@ body, ul, ol, p {
     color: #333;
     font-family: "Merriweather",Georgia,serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 2em;
 }
 
@@ -60,8 +60,8 @@ h4 {
 
 #main h3 {
     color: #000000;
-    font-size: 22px;
-    margin: 0 0 10px 0;
+    font-size: 18px;
+    margin: 0 0 5px 0;
     padding-top: 0px;
 }
 
@@ -126,7 +126,7 @@ h4 {
 
 #header nav a {
     float: left;
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
     text-transform: lowercase;
     padding: 0 0 0px 0;
@@ -227,7 +227,7 @@ span.read-more{font-size:12px}
 }
 
 #entry-content p.introduction {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 #entry-content a {
